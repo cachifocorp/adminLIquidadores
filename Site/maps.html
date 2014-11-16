@@ -1,0 +1,154 @@
+<html>
+<head>
+	<title>mapas</title>
+	<script type="text/javascript" src="http://amv.estigioportal.com/Pages/src/js/jquery-1.8.3.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	<script type="text/javascript" src="http://amv.estigioportal.com/Pages/src/js/gmap3.js"></script>
+	<style type="text/css">
+		#googlemap{
+			width: 500px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div id="Content_page_cit" class="input_holder" style="text-align:center;">
+    <select name="Sedes" id="Sedes" class="input-xxlarge">
+      <option value="1">Bucaramanga</option>
+      <option value="2">Cali</option>
+      <option value="3">Medellin</option>
+      <option value="4">Cartagena</option>
+    </select>
+  </div>
+		<div id="direcciones"></div>
+
+	<div id="googlemaps" ><div id="googlemap"></div></div>
+
+
+
+	<script type="text/javascript">
+	   var iconMarker = "http://amv.estigioportal.com/Pages/src/img/markerMapAMV.png";
+
+$(document).ready(function () {
+        
+        var markeroptions = {
+            values: [{
+                address: "bogota carrera 29 # 22b-57 interior 34",
+                options: { icon: iconMarker },
+                events: {
+                    click: function () {
+                        $("#direcciones").html(direcciones("  carrera 29 # 22b-57 interior 34", "(1)7424209", "(577)69703707", "amv@amv.com"));
+                    }
+                }
+            }
+            ]
+        };
+        getMapa(markeroptions);
+        
+        $("#Sedes").change(function () {
+        var valor = $("#Sedes").val();
+        switch (valor) {
+        case "1" : 
+          var markeroptions = { 
+            values: [{ 
+               action: 'addMarker',
+
+              latLng: [71.18161, -73.111968], 
+              options: { icon: "http://amv.estigioportal.com/Pages/src/img/markerMapAMV.png" },
+              events: {click: function () {
+              $("#direcciones").html(direcciones(" Carrera 29 No. 45 - 45 Piso 15 Metropolitan Bussines Park ", " ", "(57) (7) 697 03 07", ""));
+                }
+              }
+            },]};
+            getMapa(markeroptions);
+        break;
+        case "2" :
+          var markeroptions = { 
+            values: [{ 
+               action: 'addMarker',
+
+              latLng: [10.392366, -75.492704], 
+              options: { icon: "http://amv.estigioportal.com/Pages/src/img/markerMapAMV.png"  },
+              events: {click: function () {
+                  $("#direcciones").html(direcciones(" Carrera 69 No. 31 - 139 Oficina 226B C.C. Ronda Real  ", "(57) (5) 651 66 00", " ", ""));
+              }}},]};
+          getMapa(markeroptions);
+        break;
+        case "3" :
+          var markeroptions = { 
+            values: [{ 
+               action: 'addMarker',
+               latLng: [10.982081, -74.803312], 
+            options: { icon: "http://amv.estigioportal.com/Pages/src/img/markerMapAMV.png"  },
+            events: {click: function () {
+              $("#direcciones").html(direcciones(" Carrera 51D No. 90 - 206  Santa Mónica  ", "(57) (7) 373 91 41", "(57) (7) 373 91 43", ""));
+         }}},]};
+          getMapa(markeroptions);
+        break;
+        case "4" :
+          var markeroptions = { values: [    
+        { latLng: [33.7299, -76.540216], options: { icon: "http://amv.estigioportal.com/Pages/src/img/markerMapAMV.png"  },
+        events: {click: function () {
+         $("#direcciones").html(direcciones(" Carrera 100 No. 11 - 80 Oficina 703 Torre Valle de Lili  Holguines Trade Center ", "(57) (2) 485 07 09", " (57) (2) 485 07 10", ""));
+         }}},]};
+          getMapa(markeroptions);
+        break;
+        }});
+
+ function getMapa(markeroptions) {
+            $('#googlemap').gmap3('destroy').remove();
+            $("#googlemaps").html(' <div id="googlemap"></div>');
+            $('#googlemap').gmap3({
+                marker: markeroptions,
+                map: {
+                    options: {
+                        zoom: 12,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                }
+            });
+        }
+
+    });      
+
+        function direcciones(dir, tel, fax, email) {
+            var mensaje = '<div class="contact_inner span12">\
+						<div class="one_fourth contact_inner_text">\
+							<div class="contact_icon_holder">\
+								<i class="icon-map-marker"></i></div>\
+							<div class="contact_text_info">\
+								<span>Dirección :</span> '+ dir + '	</div>\
+						</div>\
+						<div class="one_fourth contact_inner_text">\
+							<div class="contact_icon_holder">\
+								<i class="icon-phone"></i>\
+							</div>\
+							<div class="contact_text_info">\
+								<span>Telefono :</span>'+ tel + '</div>\
+						</div>\
+						<div class="one_fourth contact_inner_text">\
+							<div class="contact_icon_holder">\
+								<i class="icon-print"></i>\
+							</div>\
+							<div class="contact_text_info">\
+								<span>Fax :</span>'+ fax + '</div>\
+						</div>\
+						<div class="one_fourth lastcolumn contact_inner_text">\
+							<div class="contact_icon_holder">\
+								<i class="icon-envelope-alt"></i>\
+							</div>\
+							<div class="contact_text_info">\
+								<span>Email :</span>'+ email + '</div>\
+						</div>\
+						<div class="clear"></div></div>';
+
+            return mensaje;
+        }
+
+    
+
+
+
+</script>
+</body>
+</html>

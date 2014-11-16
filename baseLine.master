@@ -1,0 +1,211 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="baseLine.master.cs" Inherits="baseLine" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    	<meta charset="utf-8">
+		<title>.::AMV::.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Site Description -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- styles -->
+		<link href="Modules/src/css/bootstrap.css" rel="stylesheet">
+		<link href="Modules/src/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="Modules/src/css/base.css" rel="stylesheet">
+		<!---<link href="Modules/css/flexslider.css" rel="stylesheet">-->
+		<link href="Modules/src/css/prettyPhoto.css" rel="stylesheet">
+		<link href="Modules/src/css/style.css" rel="stylesheet">
+		
+		<!-- REVOLUTION BANNER CSS SETTINGS -->
+        <link rel="stylesheet" type="text/css" href="Modules/src/rs-plugin/css/settings.css" media="screen" />
+		
+		<!-- font awesome -->
+        <link href="Modules/src/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen">
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="Modules/src/ico/apple-touch-icon-144-precomposed.html">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="Modules/src/ico/apple-touch-icon-114-precomposed.html">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="Modules/src/ico/apple-touch-icon-72-precomposed.html">
+		<link rel="apple-touch-icon-precomposed" href="Modules/src/ico/apple-touch-icon-57-precomposed.html">
+		<link rel="shortcut icon" href="Modules/src/ico/favicon.html">
+
+			<!-- jquery -->
+		<script src="Modules/src/js/jquery-1.8.3.js" type="text/javascript"></script>
+		<script src="Modules/src/js/bootstrap.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.tipsy.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.easing.1.3.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.flexslider-min.js" type="text/javascript"></script>
+		<script src="Modules/src/js/superfish.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.color.js" type="text/javascript"></script>
+		<script src="Modules/src/js/custom.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.appear.min.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.countto.js" type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.cycle.all.js"  type="text/javascript"></script>
+		<script src="Modules/src/js/modernizr.custom.js"  type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.fitvids.js"  type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.ui.totop.js"  type="text/javascript"></script>
+		<script src="Modules/src/js/jquery.prettyPhoto.js"  type="text/javascript"></script>		
+
+		<!-- jQuery REVOLUTION Slider -->
+		<script type="text/javascript" src="Modules/src/js/dev/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="Modules/src/js/dev/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+
+		<!-- google webfont font replacement  -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300,300italic' rel='stylesheet' type='text/css'>
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			.depends{margin-top: 55px; float: left;}
+			.logos{	width: 20px; height: 10px;}
+		</style>
+		
+         <!--  librerias dependencias -->       
+        <link href="Modules/src/popup/documentation/css/documentation.css" rel="stylesheet" />
+		<link href="Modules/src/popup/jquery.toolbars.css" rel="stylesheet" />
+		
+       <link href="Modules/src/popup/bootstrap.icons.css" rel="stylesheet">
+		<link href="Modules/src/popup/documentation/css/prettify.css" rel="stylesheet">
+		<link href="Modules/src/popup/documentation/css/sunburst.css" rel="stylesheet">
+        <script src="Modules/src/popup/js/prettify.js"></script>
+		<script src="Modules/src/popup/jquery.toolbar.js"></script>        
+        <script type="text/javascript"> 
+            jQuery(document).ready(function ($) {
+                // Define any icon actions before calling the toolbar
+                $('.toolbar-icons a').on('click', function (event) {
+                    event.preventDefault();
+                    window.location = $(this).attr("href");
+                });
+                $('#normal-button-bottom').toolbar({ content: '#user-options', position: 'bottom' });
+            });
+		</script> 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body> 
+    <!-- Style selector -->
+		<div id="config_holder" runat="server">
+			
+		</div>
+    <!-- Image Back ground and pattern Back ground  -->   
+      <div id="pattern_bg"></div>
+
+    <div id="main_wrapper">
+	<div class="main_wrapper_inner">         
+	          <div class="header_top_first">
+		        <div class="container">
+		         <div class="row">
+		          <div class="span12">
+	    	        <div class="header_top_inner">	            
+         		        <div class ="toad_wrapper">	
+					          <div id="user-options-small" class="toolbar-icons" style="display: none;">
+							        <a href="#"><i class="icon-align-left"></i></a>
+							        <a href="#"><i class="icon-align-center"></i></a>
+							        <a href="#"><i class="icon-align-right"></i></a>
+					        </div>
+					        <div id="user-options" class="toolbar-icons" style="display: none;">
+						        <ul id="icons_dependences" runat="server">
+							        <li><a href="#"><img src="Modules/src/img/LogosAMV/InvertedLogos/LOGOAMVAzul.png" height="41" width="200" /></a></li>
+							        <li><a href="#"><img src="Modules/src/img/LogosAMV/InvertedLogos/AMVGas.png" height="41" width="200" alt=""></a></li>
+                                    <li><a href="#"><img src="Modules/src/img/LogosAMV/InvertedLogos/ZonaFranca.png" height="41" width="200" /></a></li>
+							        <li><a href="#"><img src="Modules/src/img/LogosAMV/InvertedLogos/InternationalDevelopmentLogo.png" height="41" width="200" alt=""></a></li>						 
+							        <li><a href="#"><img src="Modules/src/img/LogosAMV/InvertedLogos/AMVPeruLogo.png" height="41" width="200" /></a></li>
+					            </ul>						
+					        </div>
+        				 
+					        <div class="align_left logo" id="logoDependence" runat="server">
+						        <img src="Modules/src/images/logoamv.png" alt="" />	                    
+	               	         </div>  
+	               	         <span class="clear"></span>
+	               	         <div id="normal-button-bottom" class="settings-button depends" >
+	                	        <img src="Modules/src/popup/documentation/img/icon-cog-small.png"/>
+	               	        </div> 
+				        <span class="clear"></span> 	
+				        </div>
+                        <div class ="text_info align_right"> 
+				        <div class="contact_head">                  
+					        <div class="head_tele_text"></div> 
+					        <div class="social_wrapper">  
+						        <a href="#"><img src="Modules/src/images/facebook.png" alt="Twitter"/></a>
+						        <a href="#"><img src="Modules/src/images/twitter.png" alt=""/></a>
+                                <a href="#"><img src="Modules/src/images/rss.png" alt=""/></a>							
+		                    </div>
+                           <span class="clear"></span>					
+                        </div>				    
+					        <div class="head_text_2">Síguenos en nuestras redes sociales</div>
+			            </div>
+				        <div class="clear"></div> 	
+			        </div>
+		          </div>	
+                 </div>	 
+               </div>  	
+            </div>
+	  
+	        <div class="header_top_second">
+                <div class="container header_top_second_inner">
+		         <div class="row">
+		         <div class="span12">
+             <!-- Header -->
+			             <div class="header_top_inner1">
+				                 <!-- begin navigation -->
+					         <div class="main_menu">
+						        <nav id="dropdown">
+							      <ul class="sf-menu clearfix" id="MasterMenu" runat="server">													
+							        </ul>
+						        </nav>	
+                               </div><!-- end navigation -->
+			             </div>                
+			        </div>
+		           </div>
+                </div>
+                    <div class="clear"></div>
+             </div>
+        
+           <asp:ContentPlaceHolder id="Slider" runat="server">        
+           </asp:ContentPlaceHolder>              
+        	
+            <div class="content">				
+	            <div class="content_wrapper">	
+	                <div class="content_wrapper_inner">  
+	                    <div class="clear"></div>      
+                            <asp:ContentPlaceHolder id="Content_page" runat="server">        
+                            </asp:ContentPlaceHolder>
+		            </div> 	 <!-- End Content wrapper inner -->  
+                </div> 	 <!-- End Content wrapper -->	
+            </div>	<!-- End content -->
+
+        <!-- Footer -->
+         <footer id="footer">	   
+			<div class="container">
+			  <div class="footer_inner"> 
+			  <div class="row">
+			        
+				 <div class="span4 widget">	
+                      <h4 class="widget_title">Mas Depencencias</h4>				 
+                      <div class="widget_text">
+                    
+					  <div class="clear"></div>
+                      </div>
+                </div>
+			   </div>
+			 </div>
+            </div>
+		 </footer> <!-- End Footer -->   
+     
+       </div>
+    </div> 
+   
+    
+</body>
+</html>

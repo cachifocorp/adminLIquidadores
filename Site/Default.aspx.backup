@@ -1,0 +1,45 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head  runat="server">
+	<meta charset="UTF-8">
+	<title>AMV GLOBAL</title>
+	 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+	 <link rel="stylesheet" href="Pages/src/css/principal.css">
+	<style>		
+		body{background: url(Pages/src/img/AmvbgWhite.png), url(Pages/src/img/AmvBgBlue.png);
+			background-size: 50% 100%;	background-position: center;background-repeat: no-repeat;
+			text-align: center;	font-family: "Rokkitt";	}		
+		#contenido{ margin:0 auto 0 auto; width:800px;}
+		#logo img{float: left; width: 100%;	height: 300px;	}
+		#dependencias{	float: left;}
+		#dependencias h2{font-size: 40px;}
+		#dependencias img{width:200px;}
+		#dependencias img:hover {border-bottom: 1px dotted black;}
+		#depList{list-style: none;}
+		#depList li{display: inline-block; margin: 10px;}		
+		footer{	font-size: 13px;}
+	</style>
+</head>
+<body>
+	<section id="contenido">
+		<div id="logo">
+			<img src="Pages/src/img/AMV_Logo.png" alt="AMV">
+		</div>
+		<hr>
+		<div id="dependencias">			 
+			<ul id="depList">
+				<li><a href="Pages/Default.aspx"><img src="Pages/src/img/LOGOAMVAzul.png"/></a></li>
+				<li><a href="managovGas/index.html"><img src="Pages/src/img/AMVGas.png"/></a></li>
+				<li><a href="Pages/Default.aspx"><img src="Pages/src/img/ZonaFranca.png" /></a></li>
+				<li><a href="Pages/Default.aspx"><img src="Pages/src/img/InternationalDevelopmentLogo.png" /></a></li>
+				<li><a href="Pages/Default.aspx"><img src="Pages/src/img/AMVPeruLogo.png" /></a></li>
+			</ul>
+		</div>	
+		<footer>
+			Informacion sobre Nuestra ley de proteccion de datos <asp:HyperLink ID="dataLaw" runat="server" Font-Bold="True" Text="Aqui">Aqui</asp:HyperLink>
+		</footer>
+		</section>
+</body>
+</html>
