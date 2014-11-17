@@ -706,6 +706,9 @@ ul.sf-menu > li {
 
 ul.sf-menu > li span:first-child {
 	font-size: 14px; text-transform: uppercase;
+    max-width:125px;
+    height:30px;
+    text-align:center;
 }
 
 ul.sf-menu > li.current, ul.sf-menu > li:hover {
