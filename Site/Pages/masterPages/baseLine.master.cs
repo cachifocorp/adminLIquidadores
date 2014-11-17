@@ -17,9 +17,10 @@ public partial class baseLine : System.Web.UI.MasterPage
 
         logoDependence.InnerHtml = dep.getDependenceLogo(dependence, "../" + Resources.paths.dependences);
        // icons_dependences.InnerHtml = dep.getDependenceLogo("../"+Resources.paths.dependences);
-        dep_contact.InnerHtml = dep.getContactDependences("../" + Resources.paths.dependences);
+         
 
-        contact_Info.InnerHtml = "AMV SA | " + depInfo.Name_city + " - " + depInfo.Address + "  |  Telefono: " + depInfo.Phone + "   |   Email: " + depInfo.Email;
+        //contact_Info.InnerHtml = "AMV SA | " + depInfo.Name_city + " - " + depInfo.Address + "  |  Telefono: " + depInfo.Phone + "   |   Email: " + depInfo.Email;
+        contact_Info.InnerHtml ="Informacion de contacto";
 
     }
 }

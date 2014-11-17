@@ -127,7 +127,7 @@
 					        </div>
         				 
 					        <div class="align_left logo" id="logoDependence" runat="server">
-                                <a href="Default.aspx"><img src="src/images/logoamv.png" alt=""  /></a>	                    
+                                <a href="Default.aspx"><img src="http://centroune.com/wp-content/uploads/2014/07/logo-generico-e1412597825721.jpg" alt=""  /></a>	                    
 	               	         </div>  
 	               	         <span class="clear"></span>
 	               	        <%-- <div id="normal-button-bottom" class="settings-button depends" style="margin-left:5px;">

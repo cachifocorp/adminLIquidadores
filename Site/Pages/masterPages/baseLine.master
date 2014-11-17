@@ -93,19 +93,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="boxlayout"> 
-    <!-- Style selector 
-		<div id="config_holder">
-			<div id="menu_config">				
-				<div class="config_style_text">coming soon</div>
-				<div class="config_slider"><img src="../src/images/comment/1.jpg" height="60" width="60" alt=""></div>
-				<ul>
-					<li class="config">coming soon</li>
-					<li class="switch_style" data-size="boxlayout depends">coming soon</li>
-					<li class="switch_style " data-size="">coming soon</li>
-				</ul>
-			</div>
-		</div>-->
-    <!-- Image Back ground and pattern Back ground  -->   
+   
       <div id="pattern_bg"></div>
 
     <div id="main_wrapper">
@@ -120,24 +108,14 @@
 							        <a href="#"><i class="icon-align-left"></i></a>
 							        <a href="#"><i class="icon-align-center"></i></a>
 							        <a href="#"><i class="icon-align-right"></i></a>
-					        </div>
-					        <div id="user-options" class="toolbar-icons" style="display: none;">
-						        <ul id="icons_dependences" runat="server">
-							       <li><a href="#"><img src="../src/img/logos/AMV_Logos para Web-01.png" height="41" width="180" style="margin:5px;" /></a></li>
-							        <li><a href="#"><img src="../src/img/logos/AMV_Logos para Web-02.png" height="41" width="180" style="margin:5px;" alt=""></a></li>
-                                    <li><a href="#"><img src="../src/img/logos/AMV_Logos para Web-03.png" height="41" width="180" style="margin:5px;" /></a></li>
-							        <li><a href="#"><img src="../src/img/logos/AMV_Logos para Web-04.png" height="41" width="180" style="margin:5px;" alt=""></a></li>						 
-							        <li><a href="#"><img src="../src/img/logos/AMV_Logos para Web-05.png" height="41" width="180" style="margin:5px;" /></a></li>
-					            </ul>						
-					        </div>
+					        </div>					        
         				 
 					        <div class="align_left logo" id="logoDependence" runat="server">
-						         <a href="Default.aspx"><img src="../src/images/logoamv.png" alt="" />	</a>                    
+						         <a href="Default.aspx">
+                                   <img src="http://centroune.com/wp-content/uploads/2014/07/logo-generico-e1412597825721.jpg" alt="" />	
+						         </a>                    
 	               	         </div>  
-	               	         <span class="clear"></span>
-	               	         <%--<div id="normal-button-bottom" class="settings-button depends" >
-	                	        <img src="../src/popup/documentation/img/icon-cog-small.png"/>
-	               	        </div>--%> 
+	               	        
 				        <span class="clear"></span> 	
 				        </div>
                         <div class ="text_info align_right"> 
@@ -145,8 +123,8 @@
 					        <div class="head_tele_text"></div> 
 					        <div class="social_wrapper">  
                                 
-						       <a href="https://twitter.com/amvsaingenieria" target="_blank"><img src="../src/images/Logos_Socialmedia_AMV-01.png"  alt="Twitter"/></a>
-						        <a href="https://www.facebook.com/pages/AMV-SA-Ingenier%C3%ADa-Conectada-al-Progreso/267003043318490" target="_blank"><img src="../src/images/Logos_Socialmedia_AMV-03.png" alt="Facebook" ></a>						
+						       <a href="https://twitter.com/" target="_blank"><img src="../src/images/Logos_Socialmedia_AMV-01.png"  alt="Twitter"/></a>
+						        <a href="https://www.facebook.com" target="_blank"><img src="../src/images/Logos_Socialmedia_AMV-03.png" alt="Facebook" ></a>						
 		                    </div>
                            <span class="clear"></span>					
                         </div>				    
@@ -199,9 +177,7 @@
 			  <div class="footer_inner"> 
 			  <div class="row ">			        
 				 <div class="span12 ">	
-                      <h4 class="widget_title">Mas Dependencias</h4>				 
-                      <div   id="dep_contact" runat="server" >
-                      </div>
+                  
 					  <div class="clear"></div>
                  </div>
 			   </div>
@@ -213,13 +189,7 @@
 		   <div class="container">
 		    <div class="row">
     	      <div class="subfooter">
-        	    <div class="span10 power_bt" runat="server" id="contact_Info"></div>
-                   <div class="span2 power_right">
-			      <div class="footer_nav social_wrapper  ">
-                     <a href="http://amvsocial.estigioportal.com/" target="_blank" ><img class="tool_tipsy" original-title="Intranet" src="../src/images/intranetAMVIcon.png"  alt="Email" style="width:30px; margin-top:10px;" /></a>&nbsp; &nbsp; &nbsp;
-					 <a href="https://login.secureserver.net/index.php?app=wbe&logout=1" target="_blank" ><img class="tool_tipsy" original-title="Correo Corporativo" src="../src/images/email.png"  alt="Email" style="width:40px; margin-top:10px;" /></a>&nbsp; &nbsp; &nbsp;
-			      </div>				  
-                 </div>
+        	    <div class="span10 power_bt" runat="server" id="contact_Info"></div>                  
               </div>
 			</div>
 		   </div>
