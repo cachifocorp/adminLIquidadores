@@ -189,4 +189,29 @@ public static class genericFunctions
        return pt;
    }
 
+    public static bool escribirArchivo(String Contenido, String nombreArchivo)
+    {
+        //Server.MapPath("~/archivos/menu/banner")
+        string fic = nombreArchivo;
+        String texto = Contenido;
+        System.IO.StreamWriter sw = new System.IO.StreamWriter(fic);
+        sw.WriteLine(texto);
+        sw.Close();
+        return true;
+    }
+
+    public static String leerArchivo(String nombreArchivo)
+    {
+        string fic = nombreArchivo;
+        String texto;
+        System.IO.StreamReader sr = new System.IO.StreamReader(fic);
+        texto = sr.ReadToEnd();
+        sr.Close();
+        return texto;
+    }
+
+    
+
+
+
 }
