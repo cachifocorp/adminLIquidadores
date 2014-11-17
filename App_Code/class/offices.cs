@@ -27,8 +27,8 @@ public class offices
     public offices(int pId, String pLat, String pLon, int pId_dependence, String pAddress,
         String pPhone, String pEmail, int pId_city, String pIcon) {
             this.id = pId;
-            this.lat = pLat;
-            this.lon = pLon;
+            this.lat = (pLat);
+            this.lon = ( pLon);
             this.id_dependence = pId_dependence;
             this.address = pAddress;
             this.phone = pPhone;

@@ -17,6 +17,7 @@ public class contact
     private String email;
     private String file_name;
     private String comment;
+    private int id_dependence;
     private int type;   
 	public contact(){}
 
@@ -25,6 +26,12 @@ public class contact
         get { return id; }
         set { id = value; }
     }
+    public int Id_dependence
+    {
+        get { return id_dependence; }
+        set { id_dependence = value; }
+    }
+
 
     public String Name
     {

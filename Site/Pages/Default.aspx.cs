@@ -15,7 +15,7 @@ public partial class Pages_Default : System.Web.UI.Page
         man_Publication man_pub = new man_Publication();
         man_client  man_cli = new man_client();
         man_menu me = new man_menu();
-        man_Slider sli = new man_Slider();
+        man_slider sli = new man_slider();
         me.getMenu(dep, "../");
         Sliders.InnerHtml = sli.formatedSlider(dep);
         news_index.InnerHtml = man_pub.publicationShort(1, dep, 2, "pub.aspx");

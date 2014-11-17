@@ -11,7 +11,7 @@ public partial class Pages_About_whereWeAre : System.Web.UI.Page
     {
         man_genericData dat = new man_genericData();
         
-        cit.InnerHtml = dat.cbxCity();
+        //cit.InnerHtml = dat.cbxCity();
        
     }
 }

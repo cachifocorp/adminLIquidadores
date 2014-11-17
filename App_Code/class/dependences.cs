@@ -8,22 +8,24 @@ using System.Web;
 /// </summary>
 public class dependences
 {
-    private int id;    
-    private String name;   
-    private String dependence_logo;    
-    private String address;    
-    private int id_city;   
-    private int id_company;    
-    private String company_name;    
-    private double lat;    
+    private int id;
+    private String name;
+    private String dependence_logo;
+    private String address;
+    private int id_city;
+    private String name_city;
+    private String name_Contry;
+    private int id_company;
+    private String company_name;
+    private double lat;
     private double lon;
     private String url;
-    private String phone;    
-    private String email;   
+    private String phone;
+    private String email;
 
-   
-	public dependences()
-	{}
+
+    public dependences()
+    { }
 
     public int Id
     {
@@ -53,6 +55,17 @@ public class dependences
     {
         get { return id_city; }
         set { id_city = value; }
+    }
+
+    public String Name_city
+    {
+        get { return name_city; }
+        set { name_city = value; }
+    }
+    public String Name_Contry
+    {
+        get { return name_Contry; }
+        set { name_Contry = value; }
     }
 
     public int Id_company

@@ -127,4 +127,19 @@ public class man_slider
 
         return ListData;
     }
+
+
+
+    public String formatedSlider(int idDependence)
+    {
+        slider[] sl = getSliders(idDependence);
+        String sli = "";
+        for (int i = 0; i < sl.Length; i++)
+        {
+            sli += WebUtility.HtmlDecode(sl[i].Slide);
+        }
+
+        return sli;
+    }
+
 }

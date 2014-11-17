@@ -10,6 +10,7 @@ public class SliderProject
 {
     private int id;
     private String img;
+    private String src;
     private int id_project;
 	public SliderProject()
 	{
@@ -30,5 +31,12 @@ public class SliderProject
     {
         get { return id_project; }
         set { id_project = value; }
+    }
+
+    public String Src
+    {
+        get { return src; }
+        set { src = value; }
+
     }
 }
