@@ -34,7 +34,7 @@
 
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource runat="server" ID="sqlNormarividad" ConnectionString='<%$ ConnectionStrings:AMVConnectionString %>' SelectCommand="SELECT [id], [date], [Issuingauthority], [postDate], '<a href">' as [file], [subject] FROM [regulations]"></asp:SqlDataSource>
+        <asp:SqlDataSource runat="server" ID="sqlNormarividad" ConnectionString='<%$ ConnectionStrings:AMVConnectionString %>' SelectCommand="SELECT [id], [date], [Issuingauthority], [postDate], '<a href=''../uploads/normatividad/'+[file]+''''+'>DESCARGAR</a>' as [file], [subject] FROM [regulations]"></asp:SqlDataSource>
     </form>
              </div>
           </div>
