@@ -27,10 +27,9 @@
 			<div class="box">
 				<div class="box-content" >
                     <div class="text-center">
-                         <img src="../src/img/amvLogo.PNG" />
                     </div>
 					<div class="text-center">
-						<h3 class="page-header">AMV <small>(Administrador)</small></h3>
+						<h3 class="page-header"><small>(Administracion)</small></h3>
 					</div>
                     <form  method="post" runat="server">
                          <div class="form-group" id="messages" runat="server">

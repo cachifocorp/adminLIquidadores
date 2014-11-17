@@ -101,7 +101,9 @@ public partial class mods_general_slider : System.Web.UI.Page
 
     private void showImages()
     {
-        System.IO.DirectoryInfo _dirInfo = new System.IO.DirectoryInfo(HttpContext.Current.Server.MapPath(ucMultiFileUpload.DestinationFolder));
+        System.IO.DirectoryInfo _dirInfo = 
+            new System.IO.DirectoryInfo(HttpContext.Current.Server.MapPath(
+                ucMultiFileUpload.DestinationFolder));
 
         if (_dirInfo.Exists)
         {

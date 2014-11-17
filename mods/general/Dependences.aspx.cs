@@ -34,7 +34,7 @@ public partial class mods_general_Dependences : System.Web.UI.Page
             }
         }
         assign();
-        list_Dependence.InnerHtml = dep.TableDataOptions(usr, pf, "Dependences.aspx");
+        
     }
 
     public void assign()
@@ -66,8 +66,7 @@ public partial class mods_general_Dependences : System.Web.UI.Page
                     dep.Dependence_logo = newName;
                     if (mdep.saveDependence(dep))
                     {
-                        //flIcon.SaveAs(Resources.patchDependence.uploadDependence + newName);
-                        flIcon.SaveAs(genericFunctions.paths(usr.Id_dependence,3) + newName);
+                        flIcon.SaveAs(Resources.patchDependence.uploadDependence + newName);
                         Messages.InnerHtml = "<p class=\"bg-success\">Información Guardada</p>";
                         // clear();
                     }
@@ -121,8 +120,7 @@ public partial class mods_general_Dependences : System.Web.UI.Page
                     dep.Dependence_logo = newName;
                     if (mdep.updateDependece(dep,1))
                     {
-                        //flIcon.SaveAs(Resources.patchDependence.uploadDependence+ newName);
-                        flIcon.SaveAs( genericFunctions.paths(usr.Id_dependence,3)+ newName);
+                        flIcon.SaveAs(Resources.patchDependence.uploadDependence+ newName);
                         String archivo = Server.MapPath("../../../"+Resources.Resource.pathUploadDependence + depe.Dependence_logo);
                         eliminarArchivo(archivo);
                         Messages.InnerHtml = "<p class=\"bg-success\">Información Guardada</p>";
