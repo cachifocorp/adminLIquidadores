@@ -12,8 +12,8 @@
 		 <div class="row">
 		  <div class="span12">
           <div class="page_title_inner">	      			       	
-				<span class="main_t_1"> Noticias </span>
-				<span class="main_t_2"> La Ultima Información Sobre Avances tecnologicos en Nuestro Sector </span>
+				<span class="main_t_1"> COMUNICADOS </span>
+				<span class="main_t_2"> La mas reciente informacion a su alcance  </span>
 		  </div>
 		  </div>
 		 </div>

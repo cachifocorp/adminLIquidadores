@@ -36,7 +36,7 @@
 				    <div class="no-move"></div>
 			    </div>
 			    <div class="box-content">
-				    <h4 class="page-header">Registro de Dependencias</h4>
+				    <h4 class="page-header">Informacion de la empresa</h4>
                     <div id="Messages" runat="server"></div>
 				    <div class="form-horizontal" role="form">
                         <div class="form-group">

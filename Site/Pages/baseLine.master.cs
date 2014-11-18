@@ -22,15 +22,15 @@ public partial class baseLine : System.Web.UI.MasterPage
                 dependences depInfo = dep.getDependenceInfo(dependence);
                 logoDependence.InnerHtml = dep.getDependenceLogo(dependence, Resources.paths.dependences);
                 //icons_dependences.InnerHtml = dep.getDependenceLogo(Resources.paths.dependences);
-                dep_contact.InnerHtml = dep.getContactDependences(Resources.paths.dependences);
-                contact_Info.InnerHtml = "AMV SA |" + depInfo.Name_city + " - " + depInfo.Address + "  |  Telefono: " + depInfo.Phone + "   |   Email: " + depInfo.Email;
+                //dep_contact.InnerHtml = dep.getContactDependences(Resources.paths.dependences);
+                contact_Info.InnerHtml = " |" + depInfo.Name_city + " - " + depInfo.Address + "  |  Telefono: " + depInfo.Phone + "   |   Email: " + depInfo.Email;
             }
             else {
                 dependences depInfo = dep.getDependenceInfo(Convert.ToInt32(Resources.Base.dependence));
                 logoDependence.InnerHtml = dep.getDependenceLogo(dependence, Resources.paths.dependences);
                 //icons_dependences.InnerHtml = dep.getDependenceLogo(Resources.paths.dependences);
-                dep_contact.InnerHtml = dep.getContactDependences(Resources.paths.dependences);
-                contact_Info.InnerHtml = "AMV SA |" + depInfo.Name_city + " - " + depInfo.Address + "  |  Telefono: " + depInfo.Phone + "   |   Email: " + depInfo.Email;
+                //dep_contact.InnerHtml = dep.getContactDependences(Resources.paths.dependences);
+                contact_Info.InnerHtml = "|" + depInfo.Name_city + " - " + depInfo.Address + "  |  Telefono: " + depInfo.Phone + "   |   Email: " + depInfo.Email;
             
             }
         }

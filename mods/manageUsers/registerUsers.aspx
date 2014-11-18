@@ -52,7 +52,7 @@
                             <div class ="form-group">
                                <label  class="col-sm-2 control-label">Contraseña</label>
 						        <div class="col-sm-4">
-							        <input type="text" id="txtPassword" runat="server" value="AMV" class="form-control" placeholder="Contraseña" data-toggle="tooltip" data-placement="bottom" title="Ingrese la contraseña">
+							        <input type="text" id="txtPassword" runat="server"   class="form-control" placeholder="Contraseña" data-toggle="tooltip" data-placement="bottom" title="Ingrese la contraseña">
 						        </div>
                                  <label class="col-sm-2 control-label" for="form-styles">¿Activo?</label>
                                  <div class="col-sm-4">
@@ -69,7 +69,7 @@
                             <div class ="form-group">
                                 <label  class="col-sm-2 control-label">Repetir Contraseña</label>
 						        <div class="col-sm-4">
-							        <input type="text" id="txtRepeatPassword" runat="server" value="AMV" class="form-control" placeholder="Repita la Contraseña" data-toggle="tooltip" data-placement="bottom" title="Ingrese nuevamente la contraseña">
+							        <input type="text" id="txtRepeatPassword" runat="server"   class="form-control" placeholder="Repita la Contraseña" data-toggle="tooltip" data-placement="bottom" title="Ingrese nuevamente la contraseña">
 						        </div>
                                 <label  class="col-sm-2 control-label">Rol</label>
 						        <div class="col-sm-4">
@@ -131,8 +131,7 @@
 						        <tr>
                                     <th>Opciones</th>
                                     <th>Nombre de usuario </th>
-                                    <th>Rol</th>
-							        <th>Dependencia</th>
+                                    <th>Rol</th>							       
 							        <th>Estado (activo/inactivo)</th>
 						        </tr>
 					        </thead>

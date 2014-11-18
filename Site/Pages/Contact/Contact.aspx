@@ -131,9 +131,7 @@
 	<div class="clear"></div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Content_down" runat="server">
-    <div class="goo_wrapper">
-	      <div id="googlemaps"><div id="googlemap"></div></div>	   
-    </div>  
+   
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="scripts_down" Runat="Server">
 

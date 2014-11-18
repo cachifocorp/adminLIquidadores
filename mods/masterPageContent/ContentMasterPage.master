@@ -1,12 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ContentMasterPage.master.cs" Inherits="mods_masterPageContent_ContentMasterPage" %>
 
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>AMV Administrador</title>
+		<title>Administrador</title>
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">

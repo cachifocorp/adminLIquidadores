@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     	<meta charset="utf-8">
-		<title>.::AMV::.</title>
+		<title>.::EMPRESA::.</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Site Description -->
 		<meta name="description" content="">
@@ -191,14 +191,8 @@
          <footer id="footer">	   
 			<div class="container">
 			  <div class="footer_inner"> 
-			  <div class="row">
-			        
-                <div class="span12">	
-                      <h4 class="widget_title">Mas Dependencias</h4>				 
-                      <div   id="dep_contact" runat="server">                       
-                      </div>
-					  <div class="clear"></div>
-                 </div>
+			  <div class="row">			        
+                
 			   </div>
 			 </div>
             </div>
@@ -210,12 +204,7 @@
     	              <div class="subfooter">
         	            <div class="span10 power_bt" runat="server" id="contact_Info">			     
 			            </div>
-                          <div class="span2 power_right">
-			              <div class="footer_nav social_wrapper  ">
-                               <a href="http://amvsocial.estigioportal.com/" target="_blank" ><img class="tool_tipsy" original-title="Intranet" src="src/images/intranetAMVIcon.png"  alt="Email" style="width:30px; margin-top:10px;" /></a>&nbsp; &nbsp; &nbsp;
-					         <a href="https://login.secureserver.net/index.php?app=wbe&logout=1" target="_blank" ><img class="tool_tipsy" original-title="Correo Corporativo" src="src/images/email.png"  alt="Email" style="width:40px; margin-top:10px;" /></a>&nbsp; &nbsp; &nbsp;
-			              </div>				  
-                         </div>
+                          
                       </div>
 			        </div>
 		           </div>

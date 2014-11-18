@@ -86,7 +86,7 @@ public class man_Publication
                                 "<div class=\"clear\"></div>" +
                                 "<div class=\"blog_title_wrapper\">" +
                                   "<div class=\"blog_title\"><h4><a href=\"" + pathPage + "?idp=" + pub[i].Id + "\">" + pub[i].Title[lang] + "</a></h4></div>" +
-                                  "<div class=\"date_b_wrapper2\"> publicado por AMV   - &nbsp;</div>" +
+                                  "<div class=\"date_b_wrapper2\"> publicado por EMPRESA  - &nbsp;</div>" +
                                 "</div>" +
                                 "<div class=\"clear\"></div>" +
                              "</div>" +

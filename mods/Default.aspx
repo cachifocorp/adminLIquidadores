@@ -4,7 +4,7 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>AMV Administrador</title>
+		<title>Administrador</title>
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
 	<div class="devoops-modal">
 		<div class="devoops-modal-header">
 			<div class="modal-header-name">
-				<span>Basic table</span>
+				<span></span>
 			</div>
 			<div class="box-icons">
 				<a class="close-link">
@@ -52,7 +52,7 @@
 	<div class="container-fluid expanded-panel">
 		<div class="row">
 			<div id="logo" class="col-xs-12 col-sm-2">
-				<a href="Default.aspx">AMV <small>(Administrador)</small></a>
+				<a href="Default.aspx"><small>(Administrador)</small></a>
 			</div>
 			<div id="top-panel" class="col-xs-12 col-sm-10">
 				<div class="row">

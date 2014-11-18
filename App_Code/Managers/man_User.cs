@@ -132,8 +132,7 @@ public Users getInfoUser(int id_user)    {
             ListData += "<tr>" +
                             "<td>" + genericFunctions.OptionsRoleBasicActions(usr, pf, page, usrs[i].Id) + "</td>" +
                             "<td>" + usrs[i].Username + "</td>" +
-                             "<td>" + usrs[i].RoleName + "</td>" +
-                            "<td>" + usrs[i].DependenceName + "</td>";
+                             "<td>" + usrs[i].RoleName + "</td>";                           
             if (usrs[i].State == 1)
             {
                 ListData += "<td><h3>Activo</h2></td>";

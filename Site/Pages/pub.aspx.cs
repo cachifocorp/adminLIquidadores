@@ -19,6 +19,6 @@ public partial class Pages_About_pub : System.Web.UI.Page
         languages.InnerHtml = p[1];
         description_pub.InnerHtml = p[2];
         //client_comment.InnerHtml = cli.getCommentsClients(Convert.ToInt32(Resources.Base.dependence), 4, Resources.paths.Clients);
-        client_photo.InnerHtml = cli.getClientsFormatPhoto(dependence, 8, Resources.paths.Clients);
+        //client_photo.InnerHtml = cli.getClientsFormatPhoto(dependence, 8, Resources.paths.Clients);
     }
 }

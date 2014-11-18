@@ -21,7 +21,7 @@ public partial class Pages_Default : System.Web.UI.Page
         news_index.InnerHtml = man_pub.publicationShort(1, dep, 2, "pub.aspx");
         services_index.InnerHtml = man_pub.publicationformatLarge(2, dep, 3, Resources.paths.services, "pub.aspx");
         //comments_Clients_index.InnerHtml = man_cli.getCommentsClients(dep, 4,Resources.paths.Clients);
-        client_photo.InnerHtml = man_cli.getClientsFormatPhoto(dep, 8, Resources.paths.Clients);
+        //client_photo.InnerHtml = man_cli.getClientsFormatPhoto(dep, 8, Resources.paths.Clients);
         
 
     }

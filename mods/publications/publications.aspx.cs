@@ -78,8 +78,8 @@ public partial class mods_publications_publications : System.Web.UI.Page
                     String newName = DateTime.Now.ToString("yyyyMMddHHmmss") + fileName;
                     pub.Image = newName;
                     //FilePublication.SaveAs(Resources.patchDependence.uploadPublications + newName);
-                    FilePublication.SaveAs(genericFunctions.paths(usr.Id_dependence, 8) + newName);
-                    if (File.Exists(genericFunctions.paths(usr.Id_dependence, 8) + newName))
+                    FilePublication.SaveAs(Server.MapPath("~/Site/Pages/uploads/publications/") + newName);
+                    if (File.Exists(Server.MapPath("~/Site/Pages/uploads/publications/") + newName))
                     {
                         manPub.SavePublication(pub, pf.Id);
                         

@@ -2,11 +2,32 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Slider" Runat="Server">
+    <!-- Start Main title wrapper  -->	   
+		   
+	<div class="main_title_wrapper">
+		    
+		<div class="page_title_wrapper">
+	    <div class="container">
+		 <div class="row">
+		  <div class="span12">
+          <div class="page_title_inner">	      			       	
+				<span class="main_t_1"> NORMATIVIDAD </span>
+				<span class="main_t_2"> Resoluciones Supersalud </span>
+		  </div>
+		  </div>
+		 </div>
+        </div>			
+      </div> <!-- End page title wrapper -->
+	  <div class="clear"></div>
+	
+	
+    </div> 	
+	
+	<!-- End Main title wrapper --> 
+</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Content_page" Runat="Server">     
- <div class="content">		
-     <div class="page-header text-center">
-      <h1>Resoluciones  <small>Supersalud</small></h1>
-    </div>		
+ <div class="content">			
      <form>
 						<fieldset class="search-form">
 							<input class="search" type="text" placeholder="Buscar">
