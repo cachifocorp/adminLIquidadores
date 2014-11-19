@@ -38,19 +38,22 @@
                     <div id="Messages" runat="server"></div>
 				    <div class="form-horizontal" role="form">
                         <div class="form-group">
-                            
+
+
+                            <asp:HiddenField ID="HfId" runat="server" />
+                            <asp:HiddenField ID="HfArchivo" runat="server" />
                               <label  class="col-sm-2 control-label">Numero
                               </label>
 						    <div class="col-sm-4">
 							    <input type="text" id="txtNumero" runat="server" class="form-control" 
-                                    placeholder="Numero" data-toggle="tooltip" data-placement="bottom" title="Numero">
+                                    placeholder="Numero" data-toggle="tooltip" data-placement="bottom" title="Numero" required>
 						    </div>
                            
 						    <label  class="col-sm-2 control-label">Fecha</label>
 						    <div class="col-sm-4">
 							    <input type="text" id="txtFecha" runat="server" class="form-control" 
                                     placeholder="Fecha" data-toggle="tooltip" data-placement="bottom" 
-                                    title="Fecha">
+                                    title="Fecha" required >
 						    </div>
                             
                             <% if (!getTitulo().Contains("Decreto") )
@@ -68,12 +71,18 @@
 						    <div class="col-sm-4">
 							    <input type="text" id="txtFechaPublicacion" runat="server" class="form-control" 
                                     placeholder="Fecha de Publicación" data-toggle="tooltip" data-placement="bottom" 
-                                    title="Fecha de Publicación">
+                                    title="Fecha de Publicación" required>
+						    </div>
+                            <label  class="col-sm-2 control-label">Asunto</label>
+						    <div class="col-sm-4">
+							    <input type="text" id="txtAsunto" runat="server" class="form-control" 
+                                    placeholder="Fecha de Publicación" data-toggle="tooltip" data-placement="bottom" 
+                                    title="Asunto" required>
 						    </div>
                             
                             <label class="col-sm-2 control-label" for="form-styles">Archivo</label>
 						    <div class="col-sm-2">
-                                <asp:FileUpload ID="flIcon" runat="server" />
+                                <asp:FileUpload ID="flIcon" runat="server"  />
 						    </div>
                             
 					    </div>
