@@ -33,7 +33,7 @@ public partial class mods_normatividad_Detalle : System.Web.UI.Page
                     txtAsunto.Value = resul[4];
                     txtFechaPublicacion.Value = resul[6];
                     Divguardado.Visible = true;
-                    hfLink.NavigateUrl = Server.MapPath("~/normatividad/") + resul[5];
+                    hfLink.NavigateUrl = "../../normatividad/" + resul[5];
                     HfArchivo.Value = resul[5];
 
                     opcionesBoton(false, true, true, true);
