@@ -26,15 +26,35 @@
 	
 	<!-- End Main title wrapper --> 
 </asp:Content>
+
+
+
+
 <asp:Content ID="Content3" ContentPlaceHolderID="Content_page" Runat="Server">     
- <div class="content">			
-     <form>
-						<fieldset class="search-form">
-							<input class="search" type="text" placeholder="Buscar">
-							<div class="search-button" type="submit"></div>
-						</fieldset>
-				</form>	
-         <form id="Form1" runat="server">
+    <form id="Form1" runat="server">
+    <div class="content">	
+        
+         <div class="row" style="margin-left:10%">
+               
+             <div class="contact_form contact_form_h" >
+             <div class="span8">  	
+				<div class="input_holder">
+                    <h5><b>Filtro</b></h5>
+						<input class="field-name" type="text" placeholder="ej Decreto 24" id="txtTexto" runat="server" />
+					</div>
+					<div class="input_holder">
+                    <h5>&nbsp;</h5>
+						<asp:Button ID="saveData" runat="server" Text="Buscar" class="search-button" OnClick="saveData_Click" /> 
+					</div>
+					
+                       
+					
+
+	        </div> 
+                 </div>
+                 </div>
+     	
+        
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlNormarividad" AllowPaging="True" style="border:1px solid black; color: black;" CssClass="table">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="N&#176;" ReadOnly="True" InsertVisible="False" SortExpression="id"></asp:BoundField>
@@ -43,16 +63,19 @@
                 <asp:BoundField DataField="Issuingauthority" HeaderText="AUTORIDAD QUE LA EXPIDE" SortExpression="Issuingauthority"></asp:BoundField>
                 <asp:BoundField DataField="postDate" HeaderText="FECHA PUBLICACION WEB" SortExpression="postDate"></asp:BoundField>
                 <asp:TemplateField HeaderText="DESCARGAR" SortExpression="file">
-                    <EditItemTemplate>
-                        <asp:TextBox runat="server" Text='<%# Bind("file") %>' ID="TextBox1"></asp:TextBox>
-                    </EditItemTemplate>
-                    <ItemTemplate>
-                        <asp:Label runat="server" Text='<%# Bind("file") %>' ID="Label1"></asp:Label>
+                     <ItemTemplate>
+                    <asp:HyperLink ID="HyperLink1" runat="server" Target="_blank" NavigateUrl='<%# Bind("file") %>'>Descargar</asp:HyperLink>
                     </ItemTemplate>
+                         <EditItemTemplate>
+                        <asp:TextBox runat="server" Text='' ID="TextBox1"></asp:TextBox>
+                    </EditItemTemplate>
+                   
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource runat="server" ID="sqlNormarividad" ConnectionString='<%$ ConnectionStrings:AMVConnectionString %>' SelectCommand="SELECT [id], [date], [Issuingauthority], [postDate], '<a href=''../uploads/normatividad/'+[file]+''''+'target=''_blank'''+' class=''button'''+'>DESCARGAR</a>' as [file], [subject] FROM [regulations]"></asp:SqlDataSource>
+        <asp:SqlDataSource runat="server" ID="sqlNormarividad" ConnectionString='<%$ ConnectionStrings:AMVConnectionString %>' SelectCommand="SELECT [id], [date], [Issuingauthority], [postDate], '&lt;a href=''../uploads/normatividad/'+[file]+''''+'target=''_blank'''+' class=''button'''+'&gt;DESCARGAR&lt;/a&gt;' as [file], [subject] FROM [regulations] ">
+            
+             </asp:SqlDataSource>
     </form> 
         </div>
 </asp:Content>

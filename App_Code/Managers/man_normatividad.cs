@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 /// <summary>
 /// Descripción breve de man_normatividad
@@ -101,6 +103,25 @@ public class man_normatividad
         return db.returnVector(sql);
 
 
+    }
+
+    public void mostrarNormatividad(GridView Grilla, String tipo, String filtro)
+    {
+        try
+        {
+            SqlConnection cone = db.conexion();
+            cone.Open();
+
+            String sql = "SELECT [numero] as NUMERO, [date] as FECHA,[subject] AS ASUNTO, [Issuingauthority] AS [AUTORIDAD QUE LA EXPIDE], [postDate] AS [FECHA PUBLICACION WEB], '../../../normatividad/'+[file] as [ARCHIVO] FROM [regulations]";
+
+            SqlCommand objComand = new SqlCommand(sql, cone);
+            SqlDataReader objReader = objComand.ExecuteReader();
+            Grilla.DataSource = objReader;
+            Grilla.DataBind();
+
+            cone.Close();
+        }
+        catch { }
     }
 
 
