@@ -706,9 +706,12 @@ ul.sf-menu > li {
 
 ul.sf-menu > li span:first-child {
 	font-size: 14px; text-transform: uppercase;
-    max-width:125px;
+    
     height:30px;
     text-align:center;
+}
+.maxMenu {
+    max-width:135px;
 }
 
 ul.sf-menu > li.current, ul.sf-menu > li:hover {

@@ -63,7 +63,7 @@ public class man_menu
                 {
                     int count = 0;
                     string sub = "";
-                    conf += " <li><a href=\"" + m[i].Url.Replace(df, "") + "\" class=\"trigger\"><span>" + m[i].Name + "</span></a>";
+                    conf += " <li class='maxMenu'><a href=\"" + m[i].Url.Replace(df, "") + "\" class=\"trigger\"><span>" + m[i].Name + "</span></a>";
                     for (int j = 0; j < m.Length; j++)
                     {
                         if (m[j].Id_parent != 0 && m[i].Id == m[j].Id_parent)
