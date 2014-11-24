@@ -26,13 +26,12 @@ public class man_normatividad
             String sql = "";
             if (tipo.Equals("insert"))
             {
-                 sql = "insert into regulations(date,issuingauthority,postdate,file,subject,timestamp,numero,tipo) values " +
+                 sql = "insert into regulations(date,issuingauthority,postdate,[file],subject,numero,tipo) values " +
                                "('" + objNormatividad.Fecha + "'," +
                                "'" + objNormatividad.EntidadEmite + "'," +
                                "'" + objNormatividad.FechaPublicacion + "'," +
                                "'" + objNormatividad.Archivo + "'," +
                                "'" + objNormatividad.Asunto + "'," +
-                               "getdate()," +
                                "'" + objNormatividad.Numero + "'," +
                                "'" + objNormatividad.Tipo + "'" +
                                " )";
@@ -44,9 +43,9 @@ public class man_normatividad
                         "date='"+objNormatividad.Fecha+"'"+
                         ", issuingauthority='"+objNormatividad.EntidadEmite+"'"+
                         ",postdate='"+objNormatividad.FechaPublicacion+"'"+
-                        ",file='"+objNormatividad.Archivo+"'"+
+                        ",[file]='"+objNormatividad.Archivo+"'"+
                         ",subject='"+objNormatividad.Asunto+"'"+
-                        ",timestamp=getdate()"+
+                        ""+
                         ",numero='"+objNormatividad.Numero+"' where id="+objNormatividad.Id
                         ;
             }
@@ -62,5 +61,47 @@ public class man_normatividad
             return false;
         }
     }
+
+    public String GetNormatividad(String tipo,String page)
+    {
+        try
+        {
+            String sql = "Select id,numero,date,issuingauthority,subject from regulations where tipo=" + tipo;
+            String[,] resul = db.RetornarMatriz(sql);
+            String resultString = "";
+            for (int i = 0; i < resul.GetLength(0); i++)
+            {
+
+                resultString += "<tr>" +
+                            "<td><a  href=\"" + page + "&accion=modificar&idNormatividad=" + resul[i,0] + "\" class=\"btn btn-warning\">Editar</a>"
+                + " <!--<a  href=\"" + page + "&idItem=" + resul[i, 0] + "\" class=\"btn btn-danger\">Eliminar</a>--> </td>" +
+                            "<td>" + resul[i, 1] + "</td>" +
+                            "<td>" + resul[i, 2] + "</td>" +
+                            "<td>" + resul[i, 3] + "</td>" +
+                            "<td>" + resul[i, 4] + "</td>" +
+                            
+                        "</tr>";
+                
+            }
+            
+
+            return resultString;
+
+        }
+        catch
+        {
+            return "";
+        }
+
+    }
+
+    public String[] getNormatividad(String tipo, String id)
+    {
+        String sql = "Select id,numero,date,issuingauthority,subject,[file],postdate from regulations where id=" + id;
+        return db.returnVector(sql);
+
+
+    }
+
 
 }
