@@ -24,10 +24,15 @@ public partial class Pages_About_policies : System.Web.UI.Page
             try
             {
                 where = "where tipo=" + Request.Params["Codigo"];
+                if(Request.Params["Codigo"].Equals("2"))
+                {
+                    GridView1.Columns.RemoveAt(3);
+                }
             }
             catch
             {
             }
+           
 
             String sql = "SELECT [id], [date], [Issuingauthority], [postDate], '../../../normatividad/'+[file] as [file], [subject] FROM [regulations] "+where;
             sqlNormarividad.SelectCommand = sql;

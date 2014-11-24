@@ -64,7 +64,7 @@
                 <asp:BoundField DataField="postDate" HeaderText="FECHA PUBLICACION WEB" SortExpression="postDate"></asp:BoundField>
                 <asp:TemplateField HeaderText="DESCARGAR" SortExpression="file">
                      <ItemTemplate>
-                    <asp:HyperLink ID="HyperLink1" runat="server" Target="_blank" NavigateUrl='<%# Bind("file") %>'>Descargar</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" Target="_blank" NavigateUrl='<%# Bind("file") %>' CssClass="button">Descargar</asp:HyperLink>
                     </ItemTemplate>
                          <EditItemTemplate>
                         <asp:TextBox runat="server" Text='' ID="TextBox1"></asp:TextBox>
