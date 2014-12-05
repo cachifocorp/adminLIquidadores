@@ -82,9 +82,9 @@ public class man_AfiliadosAsignados
     {
         string SQL = "SELECT a.[AtdAfiTdi],a.[AtdAfiIde],a.[AtdCotTdi],a.[AtdCotIde]," +
                      " a.[AtdApePri],a.[AtdApeSeg],a.[AtdNomPri],a.[AtdNomSeg],a.[EpsAsig],a.[RegCod],  e.EpsNom, " +
-                     " e.[EpsNit],e.[EpsDir],e.[EpsTel],e.[EpsCorEle],e.[EpsLinNac],e.[EpsPagWeb],mu.[MunNom], a.EPSCES" +
-                      "FROM [dbo].[AFILIADOS ASIGNADOS] a " +
-                      "inner join EPS e on e.[EpsCod] = a.EpsAsig " +
+                     " e.[EpsNit],e.[EpsDir],e.[EpsTel],e.[EpsCorEle],e.[EpsLinNac],e.[EpsPagWeb],mu.[MunNom], a.EPSCES " +
+                      " FROM [dbo].[AFILIADOS ASIGNADOS] a " +
+                      " inner join EPS e on e.[EpsCod] = a.EpsAsig " +
                       " inner join MUNICIPI mu on mu.MunCod = e.EpsMunCod " +
                      "  where a.[AtdAfiIde] =  ISNULL('"+nit+"',a.[AtdAfiIde]) ";
                     
@@ -109,11 +109,11 @@ public class man_AfiliadosAsignados
                 Afiliados.EpsAsig = reader["EpsAsig"].ToString();
                 Afiliados.RegCod = reader["RegCod"].ToString();
                 Afiliados.EpsNom = reader["EpsNom"].ToString();
-                Afiliados.EpsEst = reader["EpsEst"].ToString();
+                
                 Afiliados.EpsNit = reader["EpsNit"].ToString();
                 Afiliados.EpsDir = reader["EpsDir"].ToString();
                 Afiliados.EpsTel = reader["EpsTel"].ToString();
-                Afiliados.EpsMunCod = reader["EpsMunCod"].ToString();
+                 
                 Afiliados.EpsCorEle = reader["EpsCorEle"].ToString();
                 Afiliados.EpsLinNac = reader["EpsLinNac"].ToString();
                 Afiliados.EpsPagWeb = reader["EpsPagWeb"].ToString();

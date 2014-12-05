@@ -11,6 +11,8 @@ public partial class Site_Pages_consultas_reporte_AfiliacionEPS : System.Web.UI.
     protected void Page_Load(object sender, EventArgs e)
     {
         man_AfiliadosAsignados mafi = new man_AfiliadosAsignados();
-        afiliado = mafi.getAfiliadosEmpleador(Request.QueryString["id"].ToString());
+        afiliado = mafi.getAfiliadosEmpleador(Request.QueryString["id"].ToString(),"");
+
+        
     }
 }
