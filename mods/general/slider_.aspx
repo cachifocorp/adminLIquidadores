@@ -45,11 +45,16 @@
                                     <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
 						        </div>
                         </div>
-                        	
+                        	<!--<div class="form-group">
+						        <label class="col-sm-2 control-label" for="form-styles">Slider</label>
+						        <div class="col-sm-10">
+								        <textarea class="form-control" rows="5" id="taSlider" runat="server"></textarea>
+						        </div>
+					        </div>-->
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="form-styles">Nombre</label>
 						        <div class="col-sm-4">
-                        <asp:FileUpload ID="fuImg" runat="server" />
+                        <asp:FileUpload ID="FilePublication" runat="server" />
                                     </div>
                             </div>
 

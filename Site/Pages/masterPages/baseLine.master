@@ -89,6 +89,14 @@
                 $('#normal-button-bottom').toolbar({ content: '#user-options', position: 'bottom' });
             });
 		</script> 
+
+    <script type="text/javascript">
+        function alertchat() {
+            open("../../../mods/chat/RegistroUsuario.aspx", "Sizewindow", "width=300,height=350,scrollbars=no,toolbar=no");
+        }
+</script>
+
+
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -122,7 +130,7 @@
 				        <div class="contact_head">                  
 					        <div class="head_tele_text"></div> 
 					        <div class="social_wrapper">  
-                                
+                                <a href="javascript:alertchat()" target="_blank"><img src="../src/images/chat.png"  alt="Support Chat"/></a>
 						       <a href="https://twitter.com/" target="_blank"><img src="../src/images/Logos_Socialmedia_AMV-01.png"  alt="Twitter"/></a>
 						        <a href="https://www.facebook.com" target="_blank"><img src="../src/images/Logos_Socialmedia_AMV-03.png" alt="Facebook" ></a>						
 		                    </div>

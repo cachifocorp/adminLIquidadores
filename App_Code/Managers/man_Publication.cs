@@ -63,40 +63,43 @@ public class man_Publication
         string publication = "";
         for (int i = 0; i < pub.Length; i++)
         {
-
-            publication += "<div class=\"blog_post\">" +
-                         "<div class=\"blog_image\">" +
-                            " <a href=\"" + pathImage + pub[i].Image + "\"  data-rel=\"prettyPhoto[portfolio]\" class=\"view_image\">" +
-                                "<img src=\"" + pathImage + pub[i].Image + "\" alt=\"\">" +
-                                "<div class=\"link_overlay icon-play\"></div>" +
-                             "</a>" +
-                           "<div class=\"clear\"></div>" +
-                         "</div>" +
-                         "<div class=\"blog_content_wrapper\">" +
-                             "<div class=\"blog_t_d_wrapper\">" +
-                                "<div class=\"home_time_wrap_p\">" +
-                                     "<div class=\"icon_b_wrapper_p\"><div class=\"video_icon\"></div></div>" +
-                                      "<div class=\"day_b_wrapper_p\">" +
-                                        "<span class=\"day_b_wrapper_inner\">" + pub[i].Date_publication.ToString("dd") + "</span>" +
-                                      "</div>" +
-                                      "<div class=\"date_b_wrapper_b\">" +
-                                        "<div class=\"h_month_y\"> " + pub[i].Date_publication.ToString("MMM dd") + " </div>" +
-                                      "</div>" +
-                                "</div>	" +
-                                "<div class=\"clear\"></div>" +
-                                "<div class=\"blog_title_wrapper\">" +
-                                  "<div class=\"blog_title\"><h4><a href=\"" + pathPage + "?idp=" + pub[i].Id + "\">" + pub[i].Title[lang] + "</a></h4></div>" +
-                                  "<div class=\"date_b_wrapper2\"> publicado por EMPRESA  - &nbsp;</div>" +
-                                "</div>" +
-                                "<div class=\"clear\"></div>" +
+            try
+            {
+                publication += "<div class=\"blog_post\">" +
+                             "<div class=\"blog_image\">" +
+                                " <a href=\"" + pathImage + pub[i].Image + "\"  data-rel=\"prettyPhoto[portfolio]\" class=\"view_image\">" +
+                                    "<img src=\"" + pathImage + pub[i].Image + "\" alt=\"\">" +
+                                    "<div class=\"link_overlay icon-play\"></div>" +
+                                 "</a>" +
+                               "<div class=\"clear\"></div>" +
                              "</div>" +
-                             "<div class=\"p_content_b\">" +
-                                "<p>" + pub[i].Description[lang].Substring(0, 100) + "</p>" +
+                             "<div class=\"blog_content_wrapper\">" +
+                                 "<div class=\"blog_t_d_wrapper\">" +
+                                    "<div class=\"home_time_wrap_p\">" +
+                                         "<div class=\"icon_b_wrapper_p\"><div class=\"video_icon\"></div></div>" +
+                                          "<div class=\"day_b_wrapper_p\">" +
+                                            "<span class=\"day_b_wrapper_inner\">" + pub[i].Date_publication.ToString("dd") + "</span>" +
+                                          "</div>" +
+                                          "<div class=\"date_b_wrapper_b\">" +
+                                            "<div class=\"h_month_y\"> " + pub[i].Date_publication.ToString("MMM dd") + " </div>" +
+                                          "</div>" +
+                                    "</div>	" +
+                                    "<div class=\"clear\"></div>" +
+                                    "<div class=\"blog_title_wrapper\">" +
+                                      "<div class=\"blog_title\"><h4><a href=\"" + pathPage + "?idp=" + pub[i].Id + "\">" + pub[i].Title[lang] + "</a></h4></div>" +
+                                      "<div class=\"date_b_wrapper2\"> publicado por EMPRESA  - &nbsp;</div>" +
+                                    "</div>" +
+                                    "<div class=\"clear\"></div>" +
+                                 "</div>" +
+                                 "<div class=\"p_content_b\">" +
+                                    "<p>" + pub[i].Description[lang].Substring(0, 100) + "</p>" +
+                                 "</div>" +
+                                 "<div class=\"con_blog\"><a href=\"" + pathPage + "?idp=" + pub[i].Id + "\">Mas..</a></div>" +
                              "</div>" +
-                             "<div class=\"con_blog\"><a href=\"" + pathPage + "?idp=" + pub[i].Id + "\">Mas..</a></div>" +
-                         "</div>" +
-                        "<div class=\"clear\"></div>" +
-                    "</div>";
+                            "<div class=\"clear\"></div>" +
+                        "</div>";
+            }
+            catch { }
 
         }
 
@@ -110,19 +113,23 @@ public class man_Publication
         string publication = "";
         for (int i = 0; i < pub.Length; i++)
         {
-            publication += " <li>" +
-                                "<article>" +
-                                "<img src=\"" + pathImage + pub[i].Image + "\" alt=\"\" height=\"505\" width=\"500\" alt=\"\" >" +
-                                   "<div class=\"flex-caption\">" +
-                                        "<header>" +
-                                            "<span class=\"entry-met\">&nbsp;|&nbsp;</span>" +
-                                            "<span class=\"entry-date\">" + pub[i].Date_publication.ToString("MMMM dd, yyyy") + "</span>" +
-                                        "</header>" +
-                                        "<a href=\"" + pathPage + "?idp=" + pub[i].Id + "\" ><h2 style=\"font-family: 'Rokkitt';  font-weight:bold; color:white;\">" + pub[i].Title[lang] + "</h2></a>" +
-                                        "<p style=\"color: white; font-size:30px;\">" + pub[i].Description[lang].Substring(0, 100) + "</p>" +
-                                    "</div>" +
-                                "</article>" +
-                            "</li>";
+            try
+            {
+                publication += " <li>" +
+                                    "<article>" +
+                                    "<img src=\"" + pathImage + pub[i].Image + "\" alt=\"\" height=\"505\" width=\"500\" alt=\"\" >" +
+                                       "<div class=\"flex-caption\">" +
+                                            "<header>" +
+                                                "<span class=\"entry-met\">&nbsp;|&nbsp;</span>" +
+                                                "<span class=\"entry-date\">" + pub[i].Date_publication.ToString("MMMM dd, yyyy") + "</span>" +
+                                            "</header>" +
+                                            "<a href=\"" + pathPage + "?idp=" + pub[i].Id + "\" ><h2 style=\"font-family: 'Rokkitt';  font-weight:bold; color:white;\">" + pub[i].Title[lang] + "</h2></a>" +
+                                            "<p style=\"color: white; font-size:30px;\">" + pub[i].Description[lang].Substring(0, 100) + "</p>" +
+                                        "</div>" +
+                                    "</article>" +
+                                "</li>";
+            }
+            catch { }
         }
         return publication;
     }

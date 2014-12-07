@@ -121,30 +121,30 @@
     <value />
   </data>
   <data name="DomainDependence" xml:space="preserve">
-    <value>http://amv.estigioportal.com/</value>
+    <value>http://liquidadores.estigioportal.com/</value>
   </data>
   <data name="uploadIntegrators" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\uploads\\integrators\\</value>
+    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\liquidadores.estigioportal.com\\Site\\Pages\\uploads\\integrators\\</value>
   </data>
   <data name="uploadGeneral" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\uploads\\general\\</value>
+    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\liquidadores.estigioportal.com\\Site\\Pages\\uploads\\general\\</value>
   </data>
   <data name="uploadProjects" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\uploads\\projects\\</value>
+    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\liquidadores.estigioportal.com\\Site\\Pages\\uploads\\projects\\</value>
   </data>
   <data name="uploadDependence" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\uploads\\dependences\\</value>
+    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\liquidadores.estigioportal.com\\Site\\Pages\\uploads\\dependences\\</value>
   </data>
   <data name="uploadClients" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\uploads\\Clients\\</value>
+    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\liquidadores.estigioportal.com\\Site\\Pages\\uploads\\Clients\\</value>
   </data>
   <data name="uploadJobs" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\uploads\\jobs\\</value>
+    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\liquidadores.estigioportal.com\\Site\\Pages\\uploads\\jobs\\</value>
   </data>
   <data name="uploadPublications" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\uploads\\publications\\</value>
+    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\liquidadores.estigioportal.com\\Site\\Pages\\uploads\\publications\\</value>
   </data>
   <data name="uploadSlider" xml:space="preserve">
-    <value>C:\\Inetpub\\vhosts\\estigioportal.com\\amv.estigioportal.com\\Pages\\src\\img\\sliderImages\\</value>
+    <value>../Site/Pages/src/img/sliderImages/</value>
   </data>
 </root>
