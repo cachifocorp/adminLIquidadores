@@ -14,14 +14,23 @@ public partial class Site_Pages_consultas_EPSasignada : System.Web.UI.Page
     protected void btnBuscar_Click(object sender, EventArgs e)
     {
         man_AfiliadosAsignados masignados = new man_AfiliadosAsignados();
-        if (txt_nit.Value.Length > 5)
+        try
         {
-            tbl_consulta.InnerHtml = masignados.Afiliadostabla(txt_nit.Value);
+            if (txt_nit.Value.Length > 5)
+            {
+                masignados.fondospensiones(txt_nit.Value, GridView1);
+                GridView1.AllowPaging = true;
+                if (GridView1.Rows.Count <= 0) {
+                    Response.Write("<script>alert('NO Hay Información');</script>");
+                }
 
-        }
-        else
-        {
-            Response.Write("<script>alert('Revise la información Ingresada');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Revise la información Ingresada');</script>");
+            }
+        }catch(Exception ex){
+            Response.Write("<script>alert('Ha ocurrido un error');</script>");
         }
     }
 }

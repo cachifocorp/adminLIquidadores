@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 /// <summary>
 /// Summary description for man_AfiliadosAsignados
@@ -13,13 +14,24 @@ public class man_AfiliadosAsignados
     public man_AfiliadosAsignados() { }
 
     #region empleador
-    public AfiliadosAsignados[] getAfiliadosEmpleador(String nit)
+    public AfiliadosAsignados[] getAfiliadosEmpleador(String nit,String nom1,String nom2,String apll1,String apll2)
 	{
-        string SQL = "SELECT a.[AtdAfiTdi],a.[AtdAfiIde],a.[AtdCotTdi],a.[AtdCotIde],"+
-                     " a.[AtdApePri],a.[AtdApeSeg],a.[AtdNomPri],a.[AtdNomSeg],a.[EpsAsig],a.[RegCod],  e.EpsNom " +
-                      "FROM [dbo].[AFILIADOS ASIGNADOS] a " +
-                      "inner join EPS e on e.[EpsCod] = a.EpsAsig" +
-                      " where [AtdAfiIde] = '" + nit + "';";
+        string SQL = "declare @ID varchar(100) ,@nom1 varchar(100), @nom2 varchar(100), @apll1 varchar(100),@apll2 varchar(100) " +
+                      "  SET @ID	= " +   (nit.Length != 0 ? nit : null)  +"  " +
+                      "  SET @nom1	= " +   (nom1.Length != 0 ? nom1 : null) + "  " +
+                      "  SET @nom2	= " +   (nom2.Length != 0 ? nom2 : null) + " " +
+                      "  SET @apll1	= " +   (apll1.Length != 0 ? apll1 : null) + "  " +
+                      "  SET @apll2  = " +  (apll2.Length != 0 ? apll2 : null) + " " +
+                      "  SELECT a.[AtdAfiTdi],a.[AtdAfiIde],a.[AtdCotTdi],a.[AtdCotIde], " +
+                      "  a.[AtdApePri],a.[AtdApeSeg],a.[AtdNomPri],a.[AtdNomSeg],a.[EpsAsig],a.[RegCod],  e.EpsNom  " +
+                      "  FROM [dbo].[AFILIADOS ASIGNADOS] a  " +
+                      "  inner join EPS e on e.[EpsCod] = a.EpsAsig " +
+                      "  where a.[AtdAfiIde]		= ISNULL(@ID,a.[AtdAfiIde]) " +
+                      "  and upper(a.[AtdApePri])	like ISNULL(upper(@nom1),a.[AtdApePri]) " +
+                      "  and upper(a.[AtdApePri])	like ISNULL(upper(@nom2),a.[AtdApePri]) " +
+                      "  and upper(a.[AtdNomPri])	like ISNULL(upper(@apll1),a.[AtdNomPri]) " +
+                      "  and upper(a.[AtdNomSeg])	like ISNULL(upper(@apll2),a.[AtdNomSeg]) ";
+
         List<AfiliadosAsignados> lAsignado = new List<AfiliadosAsignados>();
         try
         {
@@ -52,8 +64,9 @@ public class man_AfiliadosAsignados
         
 	}
 
-    public String AfiliadosEmpleador(String nit){
-        AfiliadosAsignados[] afiliado = getAfiliadosEmpleador(nit);
+    public String AfiliadosEmpleador(String nit, String nom1, String nom2, String apll1, String apll2)
+    {
+        AfiliadosAsignados[] afiliado = getAfiliadosEmpleador(nit,nom1,nom2,apll1,apll2);
         String listTable = "";
         if (afiliado.Length > 0)
         {
@@ -168,6 +181,31 @@ public class man_AfiliadosAsignados
             return "<p><strong> No se encontraron datos, Revise la información Ingresada</strong></p>";
         }
 
+    }
+
+
+    #endregion
+
+    #region fondos pensiones
+
+    public void fondospensiones(String nit, GridView grid) {
+        try
+        {
+            SqlConnection cone = db.conexion();
+            cone.Open();
+
+            String sql = " select asi.[AtdAfiTdi] as TIPO,asi.[AtdAfiIde],asi.[AtdApePri]+' '+asi.[AtdApeSeg]+' '+asi.[AtdNomPri]+' '+asi.[AtdNomSeg] as NOMBRE,ep.epsNom  as EPS " +
+                         " from [AFILIADOS ASIGNADOS] asi  inner join  EPS ep on ep.EpsCod = asi.EpsAsig "+
+                         "  where asi.[AtdCotIde] = '"+nit+"'";
+
+            SqlCommand objComand = new SqlCommand(sql, cone);
+            SqlDataReader objReader = objComand.ExecuteReader();
+            grid.DataSource = objReader;
+            grid.DataBind();
+
+            cone.Close();
+        }
+        catch { }
     }
 
 

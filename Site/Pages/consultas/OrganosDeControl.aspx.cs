@@ -26,16 +26,7 @@ public partial class Site_Pages_consultas_EPSasignada : System.Web.UI.Page
     }
 
     protected void btnByName_Click(Object sender, EventArgs e) {
-        man_AfiliadosAsignados masignados = new man_AfiliadosAsignados();
-        if (txt_nit.Value.Length > 5)
-        {
-            tbl_consulta.InnerHtml = masignados.Afiliadostabla(txt_nit.Value);
-
-        }
-        else
-        {
-            Response.Write("<script>alert('Revise la información Ingresada');</script>");
-        }
+    
         
     }
 }

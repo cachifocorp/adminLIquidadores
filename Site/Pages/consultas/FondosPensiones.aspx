@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site/Pages/masterPages/baseLine.master" AutoEventWireup="true" CodeFile="Copy of EPSasignada.aspx.cs" Inherits="Site_Pages_consultas_EPSasignada" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site/Pages/masterPages/baseLine.master" AutoEventWireup="true" CodeFile="FondosPensiones.aspx.cs" Inherits="Site_Pages_consultas_EPSasignada" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
@@ -31,15 +31,15 @@
 <!-- End Main title wrapper --> 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Content_page" Runat="Server">
-      	 
+    <form  runat="server"> 
 	<div class="container content_wrapper_section">  
 	  	  		
       <div class="row">
                <div class="span12 text-center">  
-                   <p>Digite el Nit del empleador y consulte la lista de las EPS a la que sus afiliados fueron asignados.</p>
+                   <p>Digite el Nit del fondo de pensiones  y consulte la lista de las EPS a la que sus afiliados fueron asignados.</p>
                </div>
 				<div class="clear"></div>
-                <form id="Form1" class="contact_form contact_form_h"   style="margin-bottom: 10px;" runat="server">
+                <div id="Form1" class="contact_form contact_form_h"   style="margin-bottom: 10px;" runat="server">
                     <div class="span9 ">  	
 				       <div class="input_holder">
                         <h5>Nit empleador*</h5>
@@ -47,31 +47,33 @@
                            <asp:Button ID="btnBuscar" runat="server" Text="Buscar"  CssClass="button search-button" OnClick="btnBuscar_Click" />
 					    </div>
                     </div>
-                </form>
+                </div>
           <div class="span12 text-left">  
                    <p>A partir del 01 de marzo de 2014 sus empleados serán atendidos en la EPS asignada.</p>
                </div>
         </div>		
         <div class="clear"></div> 
         <hr />
-        <table class="table table-bordered">
+       
+        <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered">           
+        </asp:GridView>
+
+        <%--<table class="table table-bordered">
         <thead>
             <tr>
 	          <td>TIPO</td>
               <td>IDENTIFICACIÓN</td>
               <td>NOMBRE AFILIADO</td>
-              <td>EPS</td>
-              <td>EPS Cedida</td>
-              <td>NOTIFICACIÓN AFILIACIÓN</td>
+              <td>EPS</td>             
             </tr>
         </thead>
           <tbody id="tbl_consulta" runat="server">
             
           </tbody>
-        </table>
+        </table>--%>
        
 	  </div>  
-
+    </form> 	
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Content_down" Runat="Server">
 </asp:Content>
