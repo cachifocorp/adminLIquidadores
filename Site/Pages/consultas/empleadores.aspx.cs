@@ -16,7 +16,7 @@ public partial class Site_Pages_consultas_empleadores : System.Web.UI.Page
         man_AfiliadosAsignados masignados = new man_AfiliadosAsignados();
         if (txt_nit.Value.Length > 5)
         {
-            tbl_consulta.InnerHtml = masignados.AfiliadosEmpleador(txt_nit.Value);
+            tbl_consulta.InnerHtml = masignados.AfiliadosEmpleador(txt_nit.Value,"","","","");
 
         }
         else {
