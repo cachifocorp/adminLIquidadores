@@ -59,7 +59,7 @@
        
         <strong>CERTIFICA</strong>
 
-<p>Que el (la) señor(a) {{}} identificado(a) con Cédula de Ciudadanía {{}}, se encuentra retirado(a) del Plan Obligatorio de Salud, POS, según información relacionada a continuación.
+<p>Que el (la) señor(a) <%=afi[0].AtdNomPri+" "+afi[0].AtdNomSeg+" "+afi[0].AtdApePri+" "+afi[0].AtdApeSeg %> identificado(a) con Cédula de Ciudadanía <%=afi[0].AtdAfiIde %>, se encuentra retirado(a) del Plan Obligatorio de Salud, POS, según información relacionada a continuación.
 </p>
 
 <div id="tabla">
@@ -68,21 +68,22 @@
                <tr>
                    <td>PLAN</td>
                    <td>FECHA APFILIACION</td>
-                   <td>FECHA RETIRO</td>
+                 <%--  <td>FECHA RETIRO</td>--%>
                </tr>
            </thead>
             <tbody>
                 <tr>
                     <td>Plan Obligatorio de Salud POS</td>
-                    <td>08/01/2010</td>
-                    <td>09/12/2013</td>
+                    <td><%=Convert.ToDateTime(afi[0].AtdfecEps).ToString("dd/MM/yyyy") %></td>
+                   <%-- <td>09/12/2013</td>--%>
                 </tr>
             </tbody>
         </table>
 </div>
 
 <p>
-Se expide el presente certificado a solicitud del (la) interesado(a), a los 29 días del mes de Noviembre de 2.012
+    <% DateTime d = DateTime.Today; %>
+Se expide el presente certificado a solicitud del (la) interesado(a), el <%=d.ToString("dd 'de', MMMM 'del año', yyyy") %>
  </p>
 <p>
     <strong>Observaciones:</strong><br>

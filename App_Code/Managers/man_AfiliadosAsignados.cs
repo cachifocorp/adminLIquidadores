@@ -247,4 +247,86 @@ public class man_AfiliadosAsignados
 
     #endregion
 
+    #region certificado 
+    
+        public void certificadoList(String nit, GridView grid)
+        {
+            try
+            {
+                SqlConnection cone = db.conexion();
+                cone.Open();
+
+                String sql = " select asi.[AtdAfiTdi] as TIPO,asi.[AtdAfiIde],asi.[AtdApePri]+' '+asi.[AtdApeSeg]+' '+asi.[AtdNomPri]+' '+asi.[AtdNomSeg] as NOMBRE,ep.epsNom  as EPS " +
+                             
+                             " from [AFILIADOS ASIGNADOS] asi  inner join  EPS ep on ep.EpsCod = asi.EpsAsig " +
+                             "  where asi.[AtdAfiIde] = '" + nit + "'";
+
+                SqlCommand objComand = new SqlCommand(sql, cone);
+                SqlDataReader objReader = objComand.ExecuteReader();
+                grid.DataSource = objReader;
+                grid.DataBind();
+
+                cone.Close();
+            }
+            catch { }
+        }
+
+
+
+        public AfiliadosAsignados[] getAfiliado(String nit, String nombre)
+        {
+            string SQL = "SELECT a.[AtdAfiTdi],a.[AtdAfiIde],a.[AtdCotTdi],a.[AtdCotIde]," +
+                         " a.[AtdApePri],a.[AtdApeSeg],a.[AtdNomPri],a.[AtdNomSeg],a.[EpsAsig],a.[RegCod],  e.EpsNom, " +
+                         " e.[EpsNit],e.[EpsDir],e.[EpsTel],e.[EpsCorEle],e.[EpsLinNac],e.[EpsPagWeb],mu.[MunNom], a.EPSCES,[AtdFecStm],[AtdfecEps] " +
+                          " FROM [dbo].[AFILIADOS ASIGNADOS] a " +
+                          " inner join EPS e on e.[EpsCod] = a.EpsAsig " +
+                          " inner join MUNICIPI mu on mu.MunCod = e.EpsMunCod " +
+                         "  where a.[AtdAfiIde] =  ISNULL('" + nit + "',a.[AtdAfiIde]) ";
+
+
+            List<AfiliadosAsignados> lAsignado = new List<AfiliadosAsignados>();
+            try
+            {
+                SqlConnection con = db.conexion();
+                con.Open();
+                SqlCommand com = new SqlCommand(SQL, con);
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    AfiliadosAsignados Afiliados = new AfiliadosAsignados();
+                    Afiliados.AtdAfiTdi = reader["AtdAfiTdi"].ToString();
+                    Afiliados.AtdAfiIde = reader["AtdAfiIde"].ToString();
+                    Afiliados.AtdCotIde = reader["AtdCotIde"].ToString();
+                    Afiliados.AtdApePri = reader["AtdApePri"].ToString();
+                    Afiliados.AtdApeSeg = reader["AtdApeSeg"].ToString();
+                    Afiliados.AtdNomPri = reader["AtdNomPri"].ToString();
+                    Afiliados.AtdNomSeg = reader["AtdNomSeg"].ToString();
+                    Afiliados.EpsAsig = reader["EpsAsig"].ToString();
+                    Afiliados.RegCod = reader["RegCod"].ToString();
+                    Afiliados.EpsNom = reader["EpsNom"].ToString();
+                    Afiliados.EpsNit = reader["EpsNit"].ToString();
+                    Afiliados.EpsDir = reader["EpsDir"].ToString();
+                    Afiliados.EpsTel = reader["EpsTel"].ToString();                   ;
+                    Afiliados.MunNom = reader["MunNom"].ToString();
+                    Afiliados.EPSCES = reader["EPSCES"].ToString();
+                    Afiliados.AtdFecStm = reader["AtdFecStm"].ToString();
+                    Afiliados.AtdfecEps = reader["AtdfecEps"].ToString();
+
+                    lAsignado.Add(Afiliados);
+                }
+                con.Close();
+                return lAsignado.ToArray();
+
+            }
+            catch (Exception ex)
+            {
+                return lAsignado.ToArray();
+            }
+
+        }
+
+
+
+    #endregion
+
 }
