@@ -17,11 +17,11 @@ public class man_AfiliadosAsignados
     public AfiliadosAsignados[] getAfiliadosEmpleador(String nit,String nom1,String nom2,String apll1,String apll2)
 	{
         string SQL = "declare @ID varchar(100) ,@nom1 varchar(100), @nom2 varchar(100), @apll1 varchar(100),@apll2 varchar(100) " +
-                      "  SET @ID	= " +   (nit.Length != 0 ? nit : null)  +"  " +
-                      "  SET @nom1	= " +   (nom1.Length != 0 ? nom1 : null) + "  " +
-                      "  SET @nom2	= " +   (nom2.Length != 0 ? nom2 : null) + " " +
-                      "  SET @apll1	= " +   (apll1.Length != 0 ? apll1 : null) + "  " +
-                      "  SET @apll2  = " +  (apll2.Length != 0 ? apll2 : null) + " " +
+                      "  SET @ID	= " +   (nit.Length != 0 ? "'"+nit+"'" : "NULL")  +"  " +
+                      "  SET @nom1	= " + (nom1.Length > 0 ? "'" + nom1 + "'" : "NULL") + "  " +
+                      "  SET @nom2	= " + (nom2.Length > 0 ? "'" + nom2 + "'" : "NULL") + " " +
+                      "  SET @apll1	= " + (apll1.Length > 0 ? "'" + apll1 + "'" : "NULL") + "  " +
+                      "  SET @apll2  = " + (apll2.Length > 0 ? "'" + apll2 + "'" : "NULL") + " " +
                       "  SELECT a.[AtdAfiTdi],a.[AtdAfiIde],a.[AtdCotTdi],a.[AtdCotIde], " +
                       "  a.[AtdApePri],a.[AtdApeSeg],a.[AtdNomPri],a.[AtdNomSeg],a.[EpsAsig],a.[RegCod],  e.EpsNom  " +
                       "  FROM [dbo].[AFILIADOS ASIGNADOS] a  " +
@@ -88,6 +88,42 @@ public class man_AfiliadosAsignados
         }
 
     }
+
+    public void AfiliacionEmpleadorGrid(String nit, GridView grid, String nom1, String nom2, String apll1, String apll2)
+    {
+        try
+        {
+            SqlConnection cone = db.conexion();
+            cone.Open();
+
+            string SQL = "declare @ID varchar(100) ,@nom1 varchar(100), @nom2 varchar(100), @apll1 varchar(100),@apll2 varchar(100) " +
+                      "  SET @ID	= " + (nit.Length != 0 ? "'" + nit + "'" : "NULL") + "  " +
+                      "  SET @nom1	= " + (nom1.Length > 0 ? "'" + nom1 + "'" : "NULL") + "  " +
+                      "  SET @nom2	= " + (nom2.Length > 0 ? "'" + nom2 + "'" : "NULL") + " " +
+                      "  SET @apll1	= " + (apll1.Length > 0 ? "'" + apll1 + "'" : "NULL") + "  " +
+                      "  SET @apll2  = " + (apll2.Length > 0 ? "'" + apll2 + "'" : "NULL") + " " +
+                      "  SELECT a.[AtdAfiTdi] as TIPO,a.[AtdAfiIde] as IDENTIFICACION, " +
+                      "  a.[AtdApePri]+' '+a.[AtdApeSeg]+' '+a.[AtdNomPri]+' '+a.[AtdNomSeg] as 'NOMBRE COMPLETO',a.[EpsNom] as EPS, e.EpsNom as 'EPS CEDIDA' " +                     
+                      "  inner join EPS e on e.[EpsCod] = a.EpsAsig " +
+                      "  where a.[AtdAfiIde]		= ISNULL(@ID,a.[AtdAfiIde]) " +
+                      "  and upper(a.[AtdApePri])	like ISNULL(upper(@nom1),a.[AtdApePri]) " +
+                      "  and upper(a.[AtdApePri])	like ISNULL(upper(@nom2),a.[AtdApePri]) " +
+                      "  and upper(a.[AtdNomPri])	like ISNULL(upper(@apll1),a.[AtdNomPri]) " +
+                      "  and upper(a.[AtdNomSeg])	like ISNULL(upper(@apll2),a.[AtdNomSeg]) ";
+
+            SqlCommand objComand = new SqlCommand(SQL, cone);
+            SqlDataReader objReader = objComand.ExecuteReader();
+            grid.DataSource = objReader;
+             
+            grid.DataBind();
+
+            cone.Close();
+        }
+        catch { }
+        
+    }
+    
+    
     #endregion
 
     #region consulta para el reporte  AfiliacionEPS
@@ -148,9 +184,9 @@ public class man_AfiliadosAsignados
 
 
 
-    public String Afiliadostabla(String nit)
+    public String Afiliadostabla(String nit,String nom1,String nom2,String apll1,String apll2)
     {
-        AfiliadosAsignados[] afiliado = getAfiliadosEmpleador(nit);
+        AfiliadosAsignados[] afiliado = getAfiliadosEmpleador(nit, nom1, nom2, apll1, apll2);
         String listTable = "";
         if (afiliado.Length > 0)
         {

@@ -20,7 +20,7 @@
 		  <div class="span12">
           <div class="page_title_inner">	      			       	
 				<span class="main_t_1">CONSUlTA </span>
-				<span class="main_t_2"> EPS ASIGNADA </span>				
+				<span class="main_t_2"> ÓRGANOS DE CONTROL </span>				
 		  </div>
 		  </div>
 		 </div>
@@ -52,6 +52,14 @@
                             <div class="span9 ">  	
 				               <div class="input_holder">
                                 <h5>Nit empleador*</h5>
+                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                       <asp:ListItem>Seleccione uno</asp:ListItem>
+                                       <asp:ListItem Value="1">Cedula de Ciudadania</asp:ListItem>
+                                       <asp:ListItem Value="2">Tarjeta de Identidad</asp:ListItem>
+                                       <asp:ListItem Value="3">Registro CIvil</asp:ListItem>
+                                       <asp:ListItem Value="4">NUIP</asp:ListItem>
+                                       <asp:ListItem Value="5">Cedula extranjera</asp:ListItem>
+                                   </asp:DropDownList>
 						            <input class="field-name" type="text" placeholder="NIT(requerido)" id="txt_nit" runat="server"/>
                                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar"  CssClass="button search-button" OnClick="btnBuscar_Click" />
 					            </div>
@@ -81,7 +89,7 @@
                </div>
            
         </div>		
-        <div class="clear"></div> 
+        <div class="clear"></div>         
         <hr />
         <table class="table table-bordered ">
         <thead>
