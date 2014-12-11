@@ -17,6 +17,8 @@ public class Users
     private int id_dependence;
     private String dependenceName;    
     private int state;
+
+    public String codeEPS { get; set; }
     
 
     

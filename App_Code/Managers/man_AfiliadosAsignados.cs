@@ -329,4 +329,61 @@ public class man_AfiliadosAsignados
 
     #endregion
 
+    #region asignacion EPS
+
+        public void ddlData(DropDownList ddl, String SQL,String dataValue,String dataText) {
+            try
+            {
+                SqlConnection cone = db.conexion();
+                cone.Open();
+                SqlCommand objComand = new SqlCommand(SQL, cone);
+                SqlDataReader objReader = objComand.ExecuteReader();             
+                ddl.DataSource = objReader;
+                ddl.DataValueField = dataValue;
+                ddl.DataTextField = dataText;
+                ddl.DataBind();
+                ddl.Items.Insert(0, new ListItem(" -- Seleccione -- ", ""));
+
+                cone.Close();
+            }
+            catch { }
+        }
+
+        public void gridDataAsignacionEps(GridView grid, String eps,String tipo,String identif, String depcod, String muncod)
+        {
+            try
+            {
+                SqlConnection cone = db.conexion();
+                cone.Open();
+
+                String sql = "declare @eps varchar(100), @tipo varchar(100), @identif varchar(100), @depcod varchar(100), @muncod varchar(100) " +
+                              "  set @eps = " + (eps.Length != 0 ? "'" + eps + "'" : "NULL") + "  " +
+                              "  set @tipo = " + (tipo.Length != 0 ? "'" + tipo + "'" : "NULL") + "  " +
+                              "  set @identif = " + (identif.Length != 0 ? "'" + identif + "'" : "NULL") + "  " +
+                              "  set @depcod  = " + (depcod.Length != 0 ? "'" + depcod + "'" : "NULL") + "  " +
+                              "  set @muncod = " + (muncod.Length != 0 ? "'" + muncod + "'" : "NULL") + "  " +
+                              "  SELECT afi.[AtdApePri]+' '+afi.[AtdApeSeg]+' '+afi.[AtdNomPri]+' '+afi.[AtdNomSeg] as Nombre, afi.[AtdAfiTdi] as Tipo ,afi.[AtdAfiIde] as 'Identificación' ,de.[DepNom] as departamento, "+
+                              "  mun.[MunNom] as 'Municipio prestación', '' as 'Documentos Afiliacion','' as 'Procedimientos Pendientes','' as 'Tutelas', '' as CtC " +
+                              "  FROM [AFILIADOS ASIGNADOS] afi "+
+                              "  inner join DEPARTAM  de on de.[DepCod] = afi.[AtdDepCod] "+
+                              "  inner join MUNICIPI mun on mun.[MunCod] =  afi.[AtdMunCAte] "+
+                              "  --inner join [TUTELAS AFILIADOS]  tut on tut.[TutAfiIde] = afi.[AtdAfiIde] "+
+                              "  where afi.EpsAsig = ISNULL(@eps,afi.EpsAsig) "+
+                              "  and afi.[AtdAfiTdi] = ISNULL(@tipo,afi.[AtdAfiTdi]) "+
+                              "  and afi.[AtdAfiIde] = ISNULL(@identif,afi.[AtdAfiIde]) "+
+                              "  and afi.[AtdDepCod] = ISNULL (@depcod,afi.[AtdDepCod]) "+
+                              "  and mun.[MunCod] =  ISNULL (@muncod,mun.[MunCod]);";
+
+                SqlCommand objComand = new SqlCommand(sql, cone);
+                SqlDataReader objReader = objComand.ExecuteReader();
+              
+                grid.DataSource = objReader;
+                grid.DataBind();
+              
+                cone.Close();
+            }
+            catch { }
+        }
+
+    #endregion
 }

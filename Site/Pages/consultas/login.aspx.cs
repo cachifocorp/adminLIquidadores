@@ -11,4 +11,17 @@ public partial class Site_Pages_consultas_login : System.Web.UI.Page
     {
 
     }
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        man_usersEPS userEps =  new man_usersEPS();
+
+        if (userEps.login(txtnit.Value, txtPass.Value))
+        {
+            Response.Redirect("AsignacionEPS.aspx");
+        }
+        else {
+            mess.Text = "La Información Ingresada es Incorrecta";
+            mess.CssClass = "notification error";
+        }
+    }
 }

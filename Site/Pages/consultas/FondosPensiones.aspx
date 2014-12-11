@@ -20,7 +20,7 @@
 		  <div class="span12">
           <div class="page_title_inner">	      			       	
 				<span class="main_t_1">CONSUlTA </span>
-				<span class="main_t_2"> ASIGNACION EMPLEADORES </span>				
+				<span class="main_t_2"> FONDOS PENSIONES </span>				
 		  </div>
 		  </div>
 		 </div>
