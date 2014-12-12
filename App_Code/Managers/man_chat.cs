@@ -21,7 +21,7 @@ public class man_chat
     {
         try
         {
-            String sql = "Select * from UserChat";
+            String sql = "Select * from UserChat order by idUserchat desc";
             String[,] resul = db.RetornarMatriz(sql);
             String resultString = "";
             for (int i = 0; i < resul.GetLength(0); i++)
@@ -127,6 +127,7 @@ public class man_chat
         try
         {
             String sql = "update chat set estado=4 where idchat="+idchat;
+            db.ejecutar(sql);
             return true;
         }
         catch
@@ -140,6 +141,7 @@ public class man_chat
         try
         {
             String sql = "update chat set estado=3 where idchat=" + idchat;
+            db.ejecutar(sql);
             return true;
         }
         catch
@@ -190,24 +192,31 @@ public class man_chat
         }
     }
 
-    public String getMensajeschat(String idchat)
+    public String[] getMensajeschat(String idchat)
     {
+        String[] vr = new String[2];
+        vr[0] = "";
+        vr[1] = "";
         try
         {
             String sql = "select * from [liquidadoresweb].[vwMensajesChat] where idchat="+idchat+" order by idmensaje asc";
             String result = "";
             String[,] resul = db.RetornarMatriz(sql);
+           
             
             for (int i = 0; i < resul.GetLength(0); i++)
             {
                 result += resul[i, 0] + ": " + resul[i, 1]+" <br />";
+                vr[1] = resul[i, 6];
 
             }
-            return result;
+            vr[0] = result;
+
+            return vr;
         }
         catch
         {
-            return "";
+            return vr;
         }
     }
 
@@ -216,9 +225,14 @@ public class man_chat
     {
         try
         {
+            String where = "";
+            if (tipo == 1)
+            {
+                where = " and c.idUser is null ";
+            }
             String sql = "select Sala, c.FechaHora,uc.Nombre,uc.Correo,c.idchat,uc.iduserchat from dbo.chat c inner join "+
                           " dbo.UserChat uc on c.idUserChat=uc.idUserChat "+
-                        " where c.Estado="+tipo+" and c.idUser is null ";
+                        " where c.Estado="+tipo+" "+where;
             String[,] resul = db.RetornarMatriz(sql);
             String resultString = "";
             for (int i = 0; i < resul.GetLength(0); i++)

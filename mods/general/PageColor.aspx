@@ -1,8 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mods/masterPageContent/ContentMasterPage.master" AutoEventWireup="true" CodeFile="PageColor.aspx.cs" Inherits="mods_general_PageColor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
+
+    <link href="../src/plugins/Color/colpick/css/colpick.css" rel="stylesheet" />
+    <script src="../src/plugins/Color/colpick/js/colpick.js"></script>
+    <script src="../src/plugins/Color/js/jquery.min.js"></script>
+    <script src="../src/plugins/Color/js/plugin.js"></script>
+    <style type="text/css">
+#picker3 {
+	margin:0;
+	padding:0;
+	border:0;
+	width:70px;
+	height:30px;
+	border-right:30px solid green;
+	line-height:30px;
+}
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
+    <div class="example-ex">
+			# <input type="text" id="picker3">
+		</div>
     <form id="Form1" runat="server"> 
     <div class="row">
 	    <div id="breadcrumb" class="col-md-12">
@@ -42,8 +61,9 @@
                               <label  class="col-sm-2 control-label">Header-Footer
                               </label>
 						    <div class="col-sm-4">
-							    <input type="text" id="txtHeaderFooter" runat="server" class="form-control" 
-                                    placeholder="Color Header-Footer" data-toggle="tooltip" data-placement="bottom" title="Color Header-Footer">
+							    <input type="text" id="txtHeaderFooter" runat="server" class="picker3" 
+                                    >
+                                
 						    </div>
 						    <label  class="col-sm-2 control-label">Menu</label>
 						    <div class="col-sm-4">

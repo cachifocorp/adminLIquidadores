@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class mods_chat_chatClient : System.Web.UI.Page
+public partial class mods_chat_Client : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["idchat"].ToString().Equals(""))
+        {
+            Response.Redirect("RegistroUsuario.aspx");
+        }
     }
     man_chat objchat = new man_chat();
 
@@ -20,8 +23,15 @@ public partial class mods_chat_chatClient : System.Web.UI.Page
     }
     protected void Timer1_Tick(object sender, EventArgs e)
     {
-
-       ContentChat.InnerHtml= objchat.getMensajeschat(Session["idchat"].ToString());
+        String[] vr=objchat.getMensajeschat(Session["idchat"].ToString());
+        if (vr[1].Equals("3") || vr[1].Equals("4"))
+        {
+            Session["idchat"] = "";
+            Response.Redirect("MensajeCliente.aspx");
+            
+            
+        }
+        ContentChat.InnerHtml = vr[0];
     }
     protected void btnEnviar_Click(object sender, EventArgs e)
     {

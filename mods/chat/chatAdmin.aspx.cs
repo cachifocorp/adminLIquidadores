@@ -36,8 +36,15 @@ public partial class mods_chat_chat : System.Web.UI.Page
     }
     protected void Timer1_Tick(object sender, EventArgs e)
     {
+        String[] vr = objchat.getMensajeschat(Session["idchatadmin"].ToString());
+        if (vr[1].Equals("3") || vr[1].Equals("4"))
+        {
+            Session["idchatadmin"] = "";
+            Response.Redirect("MensajeAdmin.aspx");
+        }
+        ContentChat.InnerHtml = vr[0];
 
-        ContentChat.InnerHtml = objchat.getMensajeschat(Session["idchatadmin"].ToString());
+       
     }
     protected void btnEnviar_Click(object sender, EventArgs e)
     {

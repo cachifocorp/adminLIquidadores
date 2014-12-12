@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ChatEsperaUsuario.aspx.cs" Inherits="mods_chat_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MensajeCliente.aspx.cs" Inherits="mods_chat_Default" %>
 
 <!DOCTYPE html>
 
@@ -23,26 +23,7 @@
 				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
 				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
 		<![endif]-->
-    <script type="text/javascript" language="javascript">
-        function onBackClick() {
-            window.close();
-        }
-        function abreventana() {
-            alert("");
-        }
-        var bPreguntar = true;
-
-        window.onbeforeunload = preguntarAntesDeSalir;
-
-        function preguntarAntesDeSalir() {
-            if (bPreguntar) {
-                var boton = document.getElementById('SaveData');
-                boton.click();
-            }
-                
-        }
-
-</script>
+   <meta http-equiv="Refresh" content="5;url=RegistroUsuario.aspx">
 </head>
 <body>
     <form id="form1" runat="server">
@@ -57,34 +38,15 @@
 				    
 			    </div>
 			    <div class="box-content">
-				    <h4 class="page-header">Solicitud enviada a nuestros agentes </h4>
+				    <h4 class="page-header">Solicitud enviada de nuestros agentes </h4>
                     <br />
                     &nbsp;
                     <br />
-                    <h4>Por favor Espere</h4>
+                    <h4>Su Sesión de Chat a finalizado.</h4>
+                    <br />
+                    <h4>Gracias por utilizar nuestros servicios</h4>
                     <div id="Messages" runat="server"></div>
-				    <div class="form-horizontal" role="form">
-                        
-                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-                            
-                            <asp:Timer ID="Timer1"  Interval="1000"  runat="server" OnTick="Timer1_Tick"></asp:Timer>
-                             
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-
-
-                        <img src="loadig.GIF" />
-                      <div class="clearfix"></div>
-					<div class="form-group">
-						<div class="col-sm-2">
-                            <asp:Button ID="SaveData" runat="server" Text="Cancelar Solicitud" class="btn btn-primary btn-label-left btn-danger" OnClick="SaveData_Click1" />
-						</div>
-                       
-					</div>
-                       
-                    </div>
+				   
                 </div>
             </div>
          </div>

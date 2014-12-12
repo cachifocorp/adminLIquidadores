@@ -145,7 +145,8 @@
 				        <div class="contact_head">                  
 					        <div class="head_tele_text"></div> 
 					        <div class="social_wrapper">  
-                                <a href="javascript:alertchat()" target="_blank"><img src="src/images/chat.png"  alt="Support Chat"/></a>
+                                
+                                <a href="javascript:alertchat()" ><img src="src/images/chat.png"  alt="Support Chat"/></a>
                                 <a href="https://twitter.com/amvsaingenieria" target="_blank"><img src="src/images/Logos_Socialmedia_AMV-01.png"  alt="Twitter"/></a>
 						        <a href="https://www.facebook.com/pages/AMV-SA-Grupo-Empresarial/267003043318490" target="_blank"><img src="src/images/Logos_Socialmedia_AMV-03.png" alt="Facebook" ></a>						
 		                    </div>

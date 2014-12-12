@@ -33,7 +33,7 @@
         </asp:UpdatePanel>
                         <center>
                         <asp:TextBox ID="txtMensaje" runat="server" style="width:70%"></asp:TextBox>
-                        <asp:Button ID="btnEnviar" runat="server" Text="Button" class="btn btn-primary btn-label-left btn-default" OnClick="btnEnviar_Click" />
+                        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" class="btn btn-primary btn-label-left btn-default" OnClick="btnEnviar_Click" />
                         </center>
                        <div class="clearfix"></div>
 					<div class="form-group">

@@ -1,18 +1,50 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mods/masterPageContent/ContentMasterPage.master" AutoEventWireup="true" CodeFile="RegistroUsuario.aspx.cs" Inherits="mods_chat_RegistroUsuario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroUsuario.aspx.cs" Inherits="mods_chat_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Solicitud de Chat</title>
+     <link href="../src/plugins/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="../src/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../src/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
+        <link href="../src/plugins/fineuploader/fineuploader-4.3.1.css" rel="stylesheet" />
+		<link href="../src/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+		<link href="../src/plugins/xcharts/xcharts.min.css" rel="stylesheet">
+		<link href="../src/plugins/select2/select2.css" rel="stylesheet">
+		<link href="../src/css/style.css" rel="stylesheet">
+        <link href="../src/css/Styles/MultipleFileUpload.css" rel="stylesheet" />
+      
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
     <script type="text/javascript" language="javascript">
         function onBackClick() {
             window.close();
         }
-</script>
+        function abreventana() {
+            alert("");
+        }
+        var bPreguntar = true;
 
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="customScripts" Runat="Server">
-    <form id="Form1" runat="server">
-        <div class="row">
+        window.onbeforeunload = preguntarAntesDeSalir;
+
+        function preguntarAntesDeSalir() {
+            if (bPreguntar)
+                var boton = document.getElementById('SaveData');
+            boton.click();
+        }
+
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="row">
 	    <div class="col-xs-12 col-sm-12">
 		    <div class="box">
 			    <div class="box-header">
@@ -59,6 +91,6 @@
             </div>
          </div>
     </div>
-     </form>
-</asp:Content>
-
+    </form>
+</body>
+</html>
