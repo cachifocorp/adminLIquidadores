@@ -57,4 +57,85 @@ public class man_faqs
         return faqFormat;
     }
 
+   
+
+
+    public bool AddFaqs(String titulo, String descripcion, String tipo, String id,String opcion)
+    {
+        try
+        {
+            String sql = "";
+            if (tipo.Equals("insert"))
+            {
+                sql = "insert into faqs(titulo,descripcion,tipo) values " +
+                               "('" + titulo + "'," +
+                               "'" + descripcion + "'," +
+                               "'" + opcion + "'" +
+                                " )";
+
+            }
+            else if (tipo.Equals("update"))
+            {
+                sql = "update faqs set " +
+                        "titulo='" + titulo + "'" +
+                        ", descripcion='" + descripcion + "'" +
+                        ",tipo='" + opcion + "'" +
+
+                        "  where id=" + id
+                        ;
+            }
+            else
+            {
+                sql = "delete from faqs where id=" + id;
+            }
+            db.ejecutar(sql);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public String GetFaqs(String page)
+    {
+        try
+        {
+            String sql = "Select id,titulo,descripcion,case when tipo=1 then 'Preguntas Frecuentes' when tipo=2 then 'Liquidacion de Acreencias' else 'Acreencias extratemporales' end as tipo from faqs ";
+            String[,] resul = db.RetornarMatriz(sql);
+            String resultString = "";
+            for (int i = 0; i < resul.GetLength(0); i++)
+            {
+
+                resultString += "<tr>" +
+                            "<td><a  href=\"" + page + "&accion=modificar&idfaqs=" + resul[i, 0] + "\" class=\"btn btn-warning\">Editar</a>"
+                + "  </td>" +
+                            "<td>" + resul[i, 1] + "</td>" +
+                            "<td>" + resul[i, 2] + "</td>" +
+                            "<td>" + resul[i, 3] + "</td>" +
+
+
+                        "</tr>";
+
+            }
+
+
+            return resultString;
+
+        }
+        catch
+        {
+            return "";
+        }
+
+    }
+
+    public String[] getFaq(String id)
+    {
+        String sql = "Select id,titulo,descripcion,tipo from faqs where id=" + id;
+        return db.returnVector(sql);
+
+
+    }
+
 }
