@@ -58,7 +58,7 @@ public partial class Pages_About_policies : System.Web.UI.Page
         }
 
 
-        String sql = "SELECT [id], [date], [Issuingauthority], [postDate], '../../../normatividad/'+[file] as [file], [subject] FROM [regulations] " + where;
+        String sql = "SELECT [id], [date], [Issuingauthority], [postDate], '../uploads/normatividad/'+[file] as [file], [subject] FROM [regulations] " + where;
         sqlNormarividad.SelectCommand = sql;
         GridView1.DataBind();
     }
