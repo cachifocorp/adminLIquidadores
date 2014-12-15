@@ -45,10 +45,10 @@
               <td><h2>FORMATO REPORTE DE AFILIACIÓN POR ASIGNACION EXCEPCIONAL</h2></td>
             </tr>
             <tr>
-              <td><h2>PROGRAMA DE ENTIDAD PROMOTORA DE SALUD DEL RÉGIMEN CONTRIBUTIVO <br> CAJA DE COMPENSACIÓN FAMILIAR ANTIOQUIA EN LIQUIDACIÓN</h2></td>
+              <td id="titulo" runat="server"></td>
             </tr>
             <tr>
-              <td><h2>ASIGNACIÓN DE AFILIADOS A ENTIDADES PROMOTORAS DE SALUD<br>Resolución 361 de Febrero 12 de 2014 Superintendencia Nacional Salud Reunion de asignación Excepcional de Afiliados de febrero 21 de 2014</h2></td>
+              <td id="resolucion" runat="server"></td>
             </tr>
             <tr>
               <td>
@@ -72,18 +72,10 @@
               </td>
             </tr>
             <tr>
-              <td>
-      	        <h2>Prestacion de servicios</h2>
-					        <p>EL PROGRAMA DE ENRIDAD PROMORA DE SALUD DEL RÉGIMEN  CONTRIBUTIVO CAJA DE COMPENSACIÓN FAMILIAR COMFENALCO ANTIOQUIA EN LIQUIDACION,brindará atención de servicios al afiliado hasta el dia 28 de febrero de 2014</p>
-					        <p>La EPS a la cual ha sido asignado el afiliado, asumira la prestación de servicios a partir de marzo 01 de 2014</p>
-					        <p>A fin de garantizar la continuidad en la prestacion del servicio de salud, le fue entregada a cada  EPS ASIGNADA un CD que contiene las historias clinicas de los afiliados asignados.</p>
-              </td>
+              <td id="footer" runat="server"></td>
             </tr>
             <tr>
-                <% 
-                    DateTime fecha = DateTime.Today;
-                    
-                     %>
+                <% DateTime fecha = DateTime.Today; %>
               <td style="text-align:center;"><strong><%=fecha.Date.ToString("MMMM") %></strong> <%=fecha.Date.ToString("dd") %>, <%=fecha.Date.ToString("yyyy") %></td>
             </tr>
           </tbody>

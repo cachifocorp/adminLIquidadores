@@ -14,11 +14,18 @@ public partial class Site_Pages_consultas_EPSasignada : System.Web.UI.Page
         {
          String SQL = "SELECT[DepCod],[DepNom]  FROM [DEPARTAM]";
         masignados.ddlData(cbxDep, SQL, "DepCod", "DepNom");
-
+          
         }
         //  masignados.certificadoList(txt_nit.Value, gridData);
-
+        
        
+    }
+    protected void GrdPagosRowCreated(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.Header)
+        {
+            e.Row.TableSection = TableRowSection.TableHeader;
+        }
     }
     protected void btnBuscar_Click(object sender, EventArgs e)
     {

@@ -10,6 +10,7 @@
             color:black;
         }
     </style>
+    <link href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Slider" Runat="Server">
       <!-- Start Main title wrapper  -->	 
@@ -75,7 +76,7 @@
                 <hr />
            <div class="span12">
              
-                      <asp:GridView ID="gridData" runat="server" CssClass="table table-bordered"  
+                      <asp:GridView ID="gridData" runat="server" CssClass="table table-bordered display grid sortable {disableSortCols: [4]}"  
                           emptydatatext="<h2>No hay datos Disponibles</h2>"  >                        
                           <Columns>
                          <%-- <asp:TemplateField HeaderText="Certificado de Afiliación">
@@ -92,5 +93,31 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Content_down" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="scripts_down" Runat="Server">
+    <script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Indicar al pluging Metadata que los metadatos deberá buscarlos en el atributo class.
+            //$.metadata.setType("class");
+
+            $("table.grid").each(function () {
+                var grid = $(this);
+
+                // Por cada GridView que se encuentre modificar el código HTML generado para agregar el THEAD.
+                if (grid.find("tbody > tr > th").length > 0) {
+                    grid.find("tbody").before("<thead><tr></tr></thead>");
+                    grid.find("thead:first tr").append(grid.find("th"));
+                    grid.find("tbody tr:first").remove();
+                }
+
+                // Si el GridView tiene la clase "sortable" aplicar el plugin DataTables si tiene más de 10 elementos.
+                if (grid.hasClass("sortable") && grid.find("tbody:first > tr").length > 10) {
+                    grid.dataTable({
+                        sPaginationType: "full_numbers", 
+                    });
+                }
+            });
+        });
+    </script>
 </asp:Content>
 

@@ -1,0 +1,3 @@
+titulo=CAJA DE COMPENSACION FAMILIAR COMFENALCO ANTIOQUIA                 COMFENALCO ANTIOQUIA EPS                 NIT. 890.900.842-6
+cuerpo=<p>     <strong>Observaciones:</strong><br> Información sujeta a verificación por parte de Comfenalco Antioquia EPS, cualquier aclaración con gusto será atendida en la línea 44534435.  </p>   
+att=Cordialmente,<br><br>  Comfenalco Antioquia EPS.
