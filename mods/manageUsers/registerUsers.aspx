@@ -86,8 +86,8 @@
                             <div class="col-sm-2">
                                 <asp:Button ID="UpdateData" runat="server" Text="Actualizar" class="btn btn-primary btn-label-left"  Enabled="False" OnClick="UpdateData_Click" />
 						    </div>
-                             <div class="col-sm-2" id="permissions" runat="server">     
-						    </div>                          
+                             <!--<div class="col-sm-2" id="permissions" runat="server">     
+						    </div> -->    
 					    </div>
                     </div>
                 </div>
