@@ -153,8 +153,8 @@ public partial class mods_mangeUsers_registerUsers : System.Web.UI.Page
         txtRepeatPassword.Value = "";
         SaveData.Enabled = false;
         UpdateData.Enabled = true;
-       // profile prf = man_Login.getInfoprofile(user);
-        //permissions.InnerHtml = "<a href=\"permissionsUser.aspx?id="+prf.Id+"\" class=\"btn btn-primary btn-label-left\">Assignar Permisos</a>";
+        profile prf = man_Login.getInfoprofile(user);
+        permissions.InnerHtml = "<a href=\"permissionsUser.aspx?id="+prf.Id+"\" class=\"btn btn-primary btn-label-left\">Assignar Permisos</a>";
     }
 
 

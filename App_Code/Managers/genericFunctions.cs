@@ -33,18 +33,25 @@ public static class genericFunctions
     /// <returns>buttons Actions Delete, update, create</returns>
     public static String OptionsRoleBasicActions(Users user, profile pr, String page,int id_item) {
         String options="";
-        switch (user.Id_role) {
-            case 1:
-                options += " <a  href=\"" + page + "?action=2&idItem="+id_item+"\" class=\"btn btn-warning\">Editar</a> ";
-                options += " <a  href=\"" + page + "?action=3&idItem=" + id_item + "\" class=\"btn btn-danger\">Eliminar</a> ";
-                break;
-            case 2:
-                options += " <a  href=\"" + page + "?action=2&idItem=" + id_item + "\" class=\"btn btn-warning\">Editar</a><li>";
-                options += " <a  href=\"" + page + "?action=3&idItem=" + id_item + "\" class=\"btn btn-danger\">Eliminar</a><li></ul>";
-                break;
-        }
+        try
+        {
+            switch (user.Id_role)
+            {
+                case 1:
+                    options += " <a  href=\"" + page + "?action=2&idItem=" + id_item + "\" class=\"btn btn-warning\">Editar</a> ";
+                    options += " <a  href=\"" + page + "?action=3&idItem=" + id_item + "\" class=\"btn btn-danger\">Eliminar</a> ";
+                    break;
+                case 2:
+                    options += " <a  href=\"" + page + "?action=2&idItem=" + id_item + "\" class=\"btn btn-warning\">Editar</a><li>";
+                    options += " <a  href=\"" + page + "?action=3&idItem=" + id_item + "\" class=\"btn btn-danger\">Eliminar</a><li></ul>";
+                    break;
+            }
 
-        return options;
+            return options;
+        }
+        catch (Exception ex) {
+            return "Ha ocurrido un error al cargar las opciones";
+        }
     }
 
     public static item_module_profile getitemmodeprof(int id_profile, int id_module) {

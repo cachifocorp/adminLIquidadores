@@ -3,9 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" Runat="Server">
 
     <link href="../src/plugins/Color/colpick/css/colpick.css" rel="stylesheet" />
-    <script src="../src/plugins/Color/colpick/js/colpick.js"></script>
-    <script src="../src/plugins/Color/js/jquery.min.js"></script>
-    <script src="../src/plugins/Color/js/plugin.js"></script>
+   
     <style type="text/css">
 #picker3 {
 	margin:0;
@@ -20,7 +18,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
     <div class="example-ex">
-			# <input type="text" id="picker3">
+		<!--<input type="text" id="picker3">-->
 		</div>
     <form id="Form1" runat="server"> 
     <div class="row">
@@ -34,7 +32,7 @@
 
     <div class="row">
 	    <div class="col-xs-12 col-sm-12">
-		    <div class="box">
+		    <div class="box" >
 			    <div class="box-header">
 				    <div class="box-name">
 					    <i class="fa fa-search"></i>
@@ -99,5 +97,40 @@
         </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="customScripts" Runat="Server">
+     <script src="../src/plugins/Color/colpick/js/colpick.js"></script>
+  <!--<script src="../src/plugins/Color/js/jquery.min.js"></script>-->
+    <script src="../src/plugins/Color/js/plugin.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $('#Content_txtHeaderFooter').colpick({
+                layout: 'hex',
+                colorScheme: 'dark',
+                submit: 0,
+                onChange: function (hsb, hex, rgb, el, bySetColor) {
+                    $(el).css('border-color', '#' + hex);
+                    // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+                    if (!bySetColor) $(el).val(hex);
+                }
+            }).keyup(function () {
+                $(this).colpickSetColor(this.value);
+            });
+
+            $('#Content_TxtMenu').colpick({
+                layout: 'hex',
+                colorScheme: 'dark',
+                submit: 0,
+                onChange: function (hsb, hex, rgb, el, bySetColor) {
+                    $(el).css('border-color', '#' + hex);
+                    
+                    // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+                    if (!bySetColor) $(el).val(hex);
+                }
+            }).keyup(function () {
+                $(this).colpickSetColor(this.value);
+            });
+
+            $(".colpick").css("z-index", 2000);
+        });
+    </script>
 </asp:Content>
 

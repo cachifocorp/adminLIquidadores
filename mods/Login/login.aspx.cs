@@ -24,7 +24,7 @@ public partial class mods_Login_login : System.Web.UI.Page
             }
             else
             {
-                messages.InnerHtml = "<p class=\"bg-danger\"><span>Error!</span> El usuario y/o contraceña  que ingresaste no coinciden</p></p>";
+                messages.InnerHtml = "<p class=\"bg-danger\"><span>Error!</span> El usuario y/o contraseña  que ingresaste no coinciden</p></p>";
                 
             }
         }
